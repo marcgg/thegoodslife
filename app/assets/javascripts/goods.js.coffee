@@ -13,7 +13,11 @@ initGoodPage = () ->
 	  img
 	)
 	map.addLayer(markerLayer).setExtent markerLayer.extent()
-	map.zoom(10, true);
+	map.zoom(map.zoom() - 1, true)
+	
+	savedCenter = map.center()
+	savedZoom = map.zoom() - 1
+	
 
 	$("body").delegate ".jsPhotoList", "click", (e) ->
 		e.preventDefault
@@ -32,7 +36,7 @@ initGoodPage = () ->
 				if $('#jsMap').hasClass('jsMoved')
 					$('#jsMap').removeClass('jsMoved')
 					map.addLayer(markerLayer).setExtent markerLayer.extent()
-					map.zoom(10);
+					map.centerzoom(savedCenter, savedZoom, true)
 	
 	$("body").delegate ".jsMilestone", "mouseover", (e) ->
 		e.preventDefault
