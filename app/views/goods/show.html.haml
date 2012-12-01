@@ -1,6 +1,9 @@
-%h1 This is good #{@good.id}
-= debug @good
+%h1= @good.title
+%p= @good.description
 
-%h2 steps
-= @good.steps.each do |step|
-  = debug step
+- @good.photo_urls.each do |url|
+  = image_tag url
+
+%h2 Milestones
+- @good.steps.each do |step|
+  = render partial: "/steps/items/#{step.type.demodulize.downcase}", locals: { step: step }
