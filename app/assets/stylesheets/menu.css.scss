@@ -60,6 +60,7 @@ header{
 						@include transition(all 0.2s linear);
 						&:focus{
 							width:200px;
+							padding:0 8px;
 							background:#fff !important;
 							color:$saumon !important;
 							&::-webkit-input-placeholder {

@@ -1,7 +1,7 @@
 %header
   .wrapper
     %nav
-      = link_to "The<span>Goods</span>Life".html_safe, '#', class: 'logo'
+      = link_to "The<span>Goods</span>Life".html_safe, root_url, class: 'logo'
       %ul
         %li
           %fieldset.search-form
@@ -9,9 +9,9 @@
               = text_field_tag :search, nil, placeholder: "Search"
               = submit_tag
         %li= link_to 'Browse', search_index_path, class: 'selected'
+        %li= link_to 'Give', give_path
         - if current_user
           %li= link_to 'My Account', account_path
           %li= link_to "Log Out", logout_path
         - else
           %li= link_to "Login", login_path, class: 'jsFacebookLogin'
-        %li= link_to 'Give', give_path
