@@ -5,7 +5,11 @@ Thegoodslife::Application.routes.draw do
 
   get "ben/view3"
 
-  resources :steps
+  resources :steps do
+    collection do
+      post "search"
+    end
+  end
   resources :goods
 
   get "bihi", to: "bihi#index"

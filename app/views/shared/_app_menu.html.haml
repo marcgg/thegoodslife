@@ -5,8 +5,9 @@
       %ul
         %li
           %fieldset.search-form
-            %input{type: 'text', placeholder: 'Search'}
-            %input{type: 'submit'}
+            = form_tag search_steps_path do
+              = text_field_tag :search, nil, placeholder: "Search"
+              = submit_tag
         %li= link_to 'Browse', '#', class: 'selected'
         %li= link_to 'My Account', '#'
         -# my account ou login selon...
