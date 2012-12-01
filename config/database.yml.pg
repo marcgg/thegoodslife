@@ -1,0 +1,7 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  database: thegoodslife_development
+  username: etiennebarrie
+  password:
