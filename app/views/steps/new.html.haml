@@ -7,7 +7,8 @@
       %label{ for:'title' } Title
       = text_field_tag :title, nil, placeholder: 'Velo, Tent, Bag, Book...'
       %label Category
-      = select_tag :category, options_for_select(@categories.map{|c| [c,c]})
+      .selects
+        = select_tag :category, options_for_select(@categories.map{|c| [c,c]})
       %label{ for:'location' } Location
       = text_field_tag :location, nil, placeholder: 'Location'
       %label{ for:'good_description' } Description
@@ -25,7 +26,7 @@
       %label{ for:'ml_location' } Location
       = text_field_tag :ml_location, nil, placeholder: 'Location'
       %label Date
-      .date-picker
+      .selects
         = date_select nil, :affected_date
       %label{ for:'ml_photo_url' } Photo
       = text_field_tag :ml_photo_url, nil, placeholder: 'Photo'
