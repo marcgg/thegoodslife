@@ -1,10 +1,10 @@
 class Good < ActiveRecord::Base
   attr_accessible :category_id, :description, :title, :owner_id, :available
-  has_many :steps, inverse_of: :good
+  has_many :steps, inverse_of: :good, dependent: :destroy
   belongs_to :owner, class_name: "User"
 
   has_many :wanters, through: :wants, source: :user
-  has_many :wants
+  has_many :wants, dependent: :destroy
 
 
   def photo_urls
