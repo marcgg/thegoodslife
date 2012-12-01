@@ -1,0 +1,8 @@
+%h1 Requests about my goods
+%p This is great
+
+- current_user.available_deals.each do |deal|
+  %h2= deal.good.title
+  - deal.good.wanters do |user|
+    = image_tag user.image_url
+    = link_to user.name, user_path(user)
