@@ -7,4 +7,5 @@ Thegoodslife::Application.routes.draw do
 
   resources :steps
 
+  get "bihi", to: "bihi#index"
 end
