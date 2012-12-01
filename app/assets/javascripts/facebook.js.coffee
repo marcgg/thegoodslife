@@ -15,6 +15,7 @@ $('.jsFacebookLogin').click (event) ->
   FB.getLoginStatus (response) =>
     if response.status == 'connected'
       login(url)
+    else
       FB.login (response) =>
         if response.status == 'connected'
           login(url)
