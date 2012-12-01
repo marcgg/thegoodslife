@@ -5,11 +5,11 @@ class Step < ActiveRecord::Base
   belongs_to :good, inverse_of: :steps
 
   def long
-    "2.#{self.id * 45}"
+    "2.#{self.id * 2}"
   end
 
   def lat
-    "48.#{self.id * 45}"
+    "48.#{self.id * 4}"
   end
 
   def open?

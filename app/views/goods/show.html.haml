@@ -29,7 +29,7 @@
   .good-content.wrapper
     .col2
       %h1= @good.title
-      %p= @good.description
+      %p= raw @good.description.gsub("\n", "<br />")
       - if @good.latest_deal
         %h3 Modalities
         %p= @good.latest_deal.message

@@ -1,11 +1,15 @@
 %article.step.deal.jsMilestone{'data-img'=> step.photo_url, 'data-lat'=> step.lat, 'data-long'=> step.long}
-  = image_tag step.owner.photo_url, class: 'profil-pic'
+  - if step.open?
+    = image_tag step.owner.photo_url, class: 'profil-pic'
+  - else
+    = image_tag step.winner.photo_url, class: 'profile-pic'
   .date= step.affected_date.strftime("%Y")
 
-  %h4.title Deal
   - if step.open?
-    %p Good belongs to #{user_link(step.owner)}
-  - else
+    %h4.title Giving
     .by #{user_link(step.owner)}
     %p
       #{step.owner.name} is giving this object!
+  - else
+    %h4.title Given
+    %p #{user_link(step.winner)} currently owns this.
