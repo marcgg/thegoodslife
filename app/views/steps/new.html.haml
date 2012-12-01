@@ -24,15 +24,6 @@
     .baseline Curabitur blandit tempus porttitor.
 
     .form
-      %label{ for:'ml_location' } Location
-      = text_field_tag :ml_location, nil, placeholder: 'Location'
-      %label Date
-      .selects
-        = date_select nil, :affected_date
-      %label{ for:'ml_photo_url' } Photo
-      = text_field_tag :ml_photo_url, nil, placeholder: 'Photo'
-      %label{ for:'ml_message' } Message
-      = text_area_tag :ml_message, nil, placeholder: 'Story of your object'
-
+      = render 'new_milestone'
       = submit_tag "Give", class: "saumon-btn"
 
