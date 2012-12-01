@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121201140923) do
+ActiveRecord::Schema.define(:version => 20121201145658) do
 
   create_table "goods", :force => true do |t|
     t.string   "title"
@@ -31,8 +31,9 @@ ActiveRecord::Schema.define(:version => 20121201140923) do
     t.string   "type"
     t.text     "message"
     t.integer  "winner_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+    t.datetime "affected_date"
   end
 
   create_table "users", :force => true do |t|

@@ -4,7 +4,7 @@ class Good < ActiveRecord::Base
   belongs_to :owner, class_name: "User"
 
   def photo_urls
-    steps.map(&:photo_url)
+    steps.map(&:photo_url).compact
   end
 
   def photo_url
