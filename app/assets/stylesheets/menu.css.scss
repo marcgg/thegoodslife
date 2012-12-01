@@ -8,6 +8,10 @@
   margin-top: 5px;
 }
 
+.subnav-link{
+  width: 160px;
+}
+
 body > header{
 	z-index:200;
 	height:35px;
@@ -33,7 +37,6 @@ body > header{
 			float:right;
 			li{
 				float:left;
-        width: 160px;
 				position:relative;
 				a{
 					display:inline-block;

@@ -16,8 +16,8 @@
               = image_tag(current_user.photo_url, class: "nav-picto")
               My Account
             %ul
-              %li= link_to 'My requests', dashboard_user_path(current_user)
-              %li= link_to 'Edit account', account_path
-              %li= link_to "Log Out", logout_path
+              %li.subnav-link= link_to 'My requests', dashboard_user_path(current_user)
+              %li.subnav-link= link_to 'Edit account', account_path
+              %li.subnav-link= link_to "Log Out", logout_path
         - else
           %li= link_to "Login", login_path, class: 'jsFacebookLogin'
