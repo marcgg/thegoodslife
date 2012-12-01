@@ -50,7 +50,7 @@ class StepsController < ApplicationController
         message:       milestone_params[:message],
         location:      milestone_params[:location],
         photo_url:     milestone_params[:photo_url],
-        owner_id:      params[:owner_id],
+        owner_id:      current_user.id,
         good_id:       good.id,
         affected_date: affected
       )

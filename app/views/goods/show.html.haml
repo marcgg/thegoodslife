@@ -29,7 +29,7 @@
       .owner-tab
         = image_tag @good.owner.photo_url, class: 'profil-pic'
         #{user_link(@good.owner)}
-        
+
       %h2 Milestones
       - if @good.owner == current_user
         %details#create-milestone
