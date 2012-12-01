@@ -2,3 +2,4 @@
 //= require jquery_ujs
 
 //= include facebook
+//= include search

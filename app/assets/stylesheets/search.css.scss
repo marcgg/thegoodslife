@@ -1,3 +1,101 @@
-// Place all the styles related to the search controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "mixins";
+
+.search-page{
+	&.wrapper{
+		width:880px;
+	}
+	h1{
+		text-align:center;
+		font-size:26px;
+		font-weight:800;
+		span{
+			font-weight:400;
+		}
+	}
+	.goods{
+		@include clearfix();
+		margin-top:50px;
+		.good{
+			float:left;
+			width:200px;
+			height:280px;
+			margin:0 10px 40px 10px;
+			cursor:pointer;
+			.graphic{
+				position:relative;
+				width:200px;
+				height:230px;
+				overflow:hidden;
+				background:#888;
+				margin-bottom:10px;
+				@include border-radius(3px);
+				.photo{
+					position:absolute;
+					top:0;
+					left:0;
+					width:200px;
+					height:230px;
+					background-position:center center;
+					-webkit-background-size:cover;
+					@include border-radius(3px);
+					@include transition-property(top,border-radius);
+					@include transition-duration(0.1s);
+					@include transition-timing-function(linear);
+				}
+				.map{
+					position:absolute;
+					top:230px;
+					left:0;
+					height:75px;
+					background:#3bb2d0;
+					@include border-bottom-radius(3px);
+					@include transition-property(top);
+					@include transition-duration(0.1s);
+					@include transition-timing-function(linear);
+				}
+			}
+			&:hover{
+				.graphic{
+					.photo{
+						top:-75px;
+						@include border-bottom-radius(0);
+					}
+					.map{
+						top:155px;
+					}
+				}
+			}
+			header{
+				h2{
+					color:$black_text;
+					font-size:15px;
+					font-weight:700;
+					margin-bottom:3px;
+					a{
+						color:$black_text;
+						text-decoration:none;
+					}
+				}
+			}
+			.stats{
+				color:$gray_text;
+				font-weight:13px;
+				font-weight:400;
+				.stat{
+					display:inline;
+					span{
+						font-weight:700;
+					}
+					&:after{
+						content:' •';
+					}
+					&:last-child{
+						&:after{
+							content:'';
+						}
+					}
+				}
+			}
+		}
+	}
+}
