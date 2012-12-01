@@ -1,9 +1,7 @@
-.step.milestone
-  = step.affected_date.strftime("%d %B %Y")
-  
-  
+%article.step.milestone.jsMilestone{'data-img'=> step.photo_url, 'data-location'=> '1.10,2.3'}
+  = image_tag step.owner.photo_url, class: 'profil-pic'
+  .date= step.affected_date.strftime("%Y")
 
-  Milestone:
-  = step.message
-
-  by #{user_link(step.owner)}
+  %h4.title Milestone
+  .by #{user_link(step.owner)}
+  %p= step.message
