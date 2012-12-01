@@ -11,8 +11,6 @@ class StepsController < ApplicationController
   end
 
   def create
-    affected = Time.parse("#{params["affected_date(1i)"]}-#{params["affected_date(2i)"]}-#{params["affected_date(3i)"]}")
-
     good = Good.create!(
       description:  params[:good_description],
       title:        params[:title],
@@ -28,11 +26,14 @@ class StepsController < ApplicationController
       good_id:      good.id
     )
 
-    if params[:ml_message].present?
+    milestone_params = params[:milestone] || {}
+    if milestone_params[:message].present?
+      affected = Time.parse("#{milestone_params["affected_date(1i)"]}-#{milestone_params["affected_date(2i)"]}-#{milestone_params["affected_date(3i)"]}")
+
       milestone = Steps::Milestone.create!(
-        message:       params[:ml_message],
-        location:      params[:ml_location],
-        photo_url:     params[:ml_photo_url],
+        message:       milestone_params[:message],
+        location:      milestone_params[:location],
+        photo_url:     milestone_params[:photo_url],
         owner_id:      params[:owner_id],
         good_id:       good.id,
         affected_date: affected
