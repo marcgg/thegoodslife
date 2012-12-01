@@ -1,34 +1,34 @@
 #person
   #avatar
-    = image_tag current_user.photo_url
+    = image_tag @user.photo_url
   #description
-    %h1= current_user.name
-    %p.bio= current_user.bio
-    %p.location= link_to current_user.location, '#'
+    %h1= @user.name
+    %p.bio= @user.bio
+    %p.location= link_to @user.location, '#'
   #score
-    %span= current_user.score
+    %span= @user.score
 
 #goods
   #summary
     #offered-count.goods-count
-      %span.count= current_user.offered_goods.count
+      %span.count= @user.offered_goods.count
       Goods offered
     #available-count.goods-count
-      %span.count= current_user.available_goods.count
+      %span.count= @user.available_goods.count
       Goods available
     #taken-count.goods-count
-      %span.count= current_user.won_goods.count
+      %span.count= @user.won_goods.count
       Goods taken
   #list
     #offered-goods
       %ol
-        - current_user.offered_goods.each do |good|
+        - @user.offered_goods.each do |good|
           %li= image_tag good.photo_url
     #available-goods
       %ol
-        - current_user.available_goods.each do |good|
+        - @user.available_goods.each do |good|
           %li= image_tag good.photo_url
     #taken-goods
       %ol
-        - current_user.won_goods.each do |good|
+        - @user.won_goods.each do |good|
           %li= image_tag good.photo_url

@@ -24,6 +24,7 @@ header{
 			float:right;
 			li{
 				float:left;
+				position:relative;
 				a{
 					display:inline-block;
 					line-height:35px;
@@ -31,16 +32,48 @@ header{
 					font-weight:700;
 					text-transform:uppercase;
 					padding:0 15px;
-					margin-left:30px;
+					margin-right:30px;
 					text-decoration:none;
 					color:$saumon_lidl;
 					@include border-radius(3px);
-					@include transition(all 0.2s linear);
 					&.selected, &:hover{
 						background:$saumon_fume;
 					}
 					&:hover{
 						color:#fff;
+					}
+				}
+				&:last-child a{
+					margin-right:0;
+				}
+				&.dropdown{
+					&:hover{
+						a{
+							@include border-bottom-radius(0);
+						}
+						ul{
+							display:block;
+						}
+						&> a{
+							background:$saumon_fume;
+						}
+					}
+					ul{
+						display:none;
+						position:absolute;
+						top:35px;
+						right:0;
+						padding-bottom:7px;
+						background:$saumon_fume;
+						@include border-bottom-radius(3px);
+						@include border-top-left-radius(3px);
+						li{
+							float:none;
+							text-align:right;
+							a{
+								background:none;
+							}
+						}
 					}
 				}
 				fieldset{
@@ -51,13 +84,15 @@ header{
 						font-size:14px;
 						font-weight:700;
 						padding:0 15px;
-						margin-left:30px;
+						margin-right:30px;
 						text-decoration:none;
 						color:$saumon_lidl;
 						@include border-radius(3px);
 						border:0;
 						background:$saumon;
-						@include transition(all 0.2s linear);
+						@include transition-property(width, background, color);
+						@include transition-duration(0.2s);
+						@include transition-timing-function(linear);
 						&:focus{
 							width:200px;
 							padding:0 8px;
