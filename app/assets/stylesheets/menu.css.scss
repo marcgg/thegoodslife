@@ -84,7 +84,6 @@ body > header{
 						padding-bottom:7px;
 						background:none;
 						@include border-bottom-radius(3px);
-						@include border-top-left-radius(3px);
 						li{
 							float:none;
 							text-align:right;

@@ -13,10 +13,9 @@ initGoodPage = () ->
 	  img
 	)
 	map.addLayer(markerLayer).setExtent markerLayer.extent()
-	map.zoom(map.zoom() - 1, true)
-	
 	savedCenter = map.center()
-	savedZoom = map.zoom() - 1
+	savedZoom = map.zoom() - 2
+	map.zoom(savedZoom, true)
 	
 
 	$("body").delegate ".jsPhotoList", "click", (e) ->

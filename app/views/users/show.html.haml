@@ -1,40 +1,41 @@
-#person
-  #avatar
-    = image_tag @user.photo_url
-  #description
-    %h1= @user.name
-    %p.bio= @user.bio
-    - if @user.location
-      %p.location= link_to @user.location, '#'
-  #score
-    %span= @user.score
+.wrapper
+  #person
+    #avatar
+      = image_tag @user.photo_url
+    #description
+      %h1= @user.name
+      %p.bio= @user.bio
+      - if @user.location
+        %p.location= link_to @user.location, '#'
+    #score
+      %span= @user.score
 
-#goods
-  #list
-    #offered-goods
-      %span.count= @user.offered_goods.count
-      Goods offered
-      %ol
-        - @user.offered_goods.each do |good|
-          %li
-            = image_tag good.photo_url, style: "width: 100px"
-            = link_to good.title, good_path(good)
+  #goods
+    #list
+      #offered-goods
+        %span.count= @user.offered_goods.count
+        Goods offered
+        %ol
+          - @user.offered_goods.each do |good|
+            %li
+              = image_tag good.photo_url, style: "width: 100px"
+              = link_to good.title, good_path(good)
 
-    #available-goods
-      %span.count= @user.available_goods.count
-      Goods available
-      %ol
-        - @user.available_goods.each do |good|
-          %li
-            = image_tag good.photo_url, style: "width: 100px"
-            = link_to good.title, good_path(good)
+      #available-goods
+        %span.count= @user.available_goods.count
+        Goods available
+        %ol
+          - @user.available_goods.each do |good|
+            %li
+              = image_tag good.photo_url, style: "width: 100px"
+              = link_to good.title, good_path(good)
 
-    #taken-goods
-      %span.count= @user.won_goods.count
-      Goods taken
-      %ol
-        - @user.won_goods.each do |good|
-          %li
-            = image_tag good.photo_url, style: "width: 100px"
-            = link_to good.title, good_path(good)
+      #taken-goods
+        %span.count= @user.won_goods.count
+        Goods taken
+        %ol
+          - @user.won_goods.each do |good|
+            %li
+              = image_tag good.photo_url, style: "width: 100px"
+              = link_to good.title, good_path(good)
 
