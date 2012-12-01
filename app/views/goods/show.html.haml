@@ -1,0 +1,6 @@
+%h1 This is good #{@good.id}
+= debug @good
+
+%h2 steps
+= @good.steps.each do |step|
+  = debug step

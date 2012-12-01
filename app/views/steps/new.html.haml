@@ -1,5 +1,5 @@
 %h1 Create a new deal
-= form_tag "steps" do
+= form_tag steps_path do
   owner_id
   = text_field_tag :owner_id
 
@@ -7,18 +7,18 @@
   = text_field_tag :title
 
   %label Category
-  = text_area_tag :category
+  = text_area_tag :category_id
 
 
 
-  %label Description
+  %label OBJECT Description
   = text_area_tag :good_description
 
   %label Location
   = text_field_tag :location
 
-  %label Description
-  = text_area_tag :description
+  %label DETAILS de l'annonce
+  = text_area_tag :message
 
   %label Image
   = text_field_tag :photo_url
@@ -29,7 +29,7 @@
   = text_field_tag :ml_location
 
   %label Commentaire
-  = text_area_tag :ml_description
+  = text_area_tag :ml_message
 
   %label Image
   = text_field_tag :ml_photo_url
