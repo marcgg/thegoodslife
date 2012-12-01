@@ -1,5 +1,5 @@
 %h1 Resultats de ma search
 - @goods.each do |good|
   .good
-    = good.title
+    = link_to good.title, good_path(good)
     = image_tag good.photo_url
