@@ -1,5 +1,89 @@
 @import "mixins";
 
 header{
+	height:35px;
+	padding:20px 0;
 	background:$saumon;
+	nav{
+		.logo{
+			float:left;
+			line-height:35px;
+			font-size:25px;
+			font-weight:bold;
+			color:$saumon_lidl;
+			text-decoration:none;
+			span{
+				color:#fff;
+			}
+		}
+		ul{
+			float:right;
+			li{
+				float:left;
+				a{
+					display:inline-block;
+					line-height:35px;
+					font-size:14px;
+					font-weight:bold;
+					text-transform:uppercase;
+					padding:0 15px;
+					margin-left:30px;
+					text-decoration:none;
+					color:$saumon_lidl;
+					@include border-radius(3px);
+					&.selected, &:hover{
+						background:$saumon_fume;
+					}
+					&:hover{
+						color:#fff;
+					}
+				}
+				fieldset{
+					input[type=text]{
+						height:35px;
+						width:60px;
+						line-height:20px;
+						font-size:14px;
+						font-weight:bold;
+						padding:0 15px;
+						margin-left:30px;
+						text-decoration:none;
+						color:$saumon_lidl;
+						@include border-radius(3px);
+						border:0;
+						background:$saumon;
+						@include transition(all 0.2s linear);
+						&:focus{
+							width:200px;
+							background:#fff !important;
+							color:$saumon !important;
+						}
+						&::-webkit-input-placeholder {
+							color:$saumon_lidl;
+							text-transform:uppercase;
+						}
+						&:hover{
+							cursor:pointer;
+							background:$saumon_fume;
+							&::-webkit-input-placeholder {
+								color:$saumon_lidl;
+								color:#fff;
+							}
+						}
+					}
+					input[type=submit]{
+						margin:0;
+						padding:0;
+						height:35px;
+						width:35px;
+						text-indent:100px;
+						line-height:35px;
+						overflow:hidden;
+						border:0;
+						background: url(image-path('search-icon.png')) center center no-repeat;
+					}
+				}
+			}
+		}
+	}
 }

@@ -1,1 +1,21 @@
 @import "compass/reset";
+@import "mixins";
+
+body {
+	font-family:Helvetica,Arial,sans-serif;
+	font-size:11px;
+	color:$gray_text;
+}
+
+input:focus{
+   outline:0;
+}
+
+.none{
+	display:none;
+}
+
+.wrapper{
+	width:860px;
+	margin:0 auto;
+}

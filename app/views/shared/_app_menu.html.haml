@@ -1,10 +1,12 @@
 %header
-  %nav
-    = link_to 'TheGoodsLifes', '#', class: 'logo'
-    %fieldset
-      %input{type: 'text'}
-      %input{type: 'submit'}
-    %ul
-      %li= link_to 'Offer', '#'
-      %li= link_to 'Browse', '#'
-      %li= link_to 'Account', '#'
+  .wrapper
+    %nav
+      = link_to "The<span>Goods</span>Life".html_safe, '#', class: 'logo'
+      %ul
+        %li
+          %fieldset.search-form
+            %input{type: 'text', placeholder: 'Search'}
+            %input{type: 'submit'}
+        %li= link_to 'Offer', '#', class: 'selected'
+        %li= link_to 'Browse', '#'
+        %li= link_to 'Account', '#'
