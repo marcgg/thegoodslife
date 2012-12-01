@@ -3,8 +3,14 @@
 Owner is #{user_link(@good.owner)}
 = image_tag @good.owner.photo_url
 
-- if @good.available?
-  = link_to "Want", want_good_path(@good)
+- if @good.available? && @good.owner_id != current_user.id
+  - if @good.wanters.include?(current_user)
+    Already requested
+  - else
+    = link_to "Request", want_good_path(@good)
+
+- if !@good.available && @good.owner_id == current_user.id
+  = link_to "Give", "#"
 
 - @good.photo_urls.each do |url|
   = image_tag url, style: "width:100px"

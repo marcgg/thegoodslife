@@ -23,12 +23,20 @@
     #offered-goods
       %ol
         - @user.offered_goods.each do |good|
-          %li= image_tag good.photo_url
+          %li
+            = image_tag good.photo_url
+            = link_to good.title, good_path(good)
     #available-goods
       %ol
         - @user.available_goods.each do |good|
-          %li= image_tag good.photo_url
+          %li
+            = image_tag good.photo_url
+            = link_to good.title, good_path(good)
+
     #taken-goods
       %ol
         - @user.won_goods.each do |good|
-          %li= image_tag good.photo_url
+          %li
+            = image_tag good.photo_url
+            = link_to good.title, good_path(good)
+
