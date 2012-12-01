@@ -1,5 +1,4 @@
 %h1 Requests about my goods
-%p This is great
 
 - current_user.available_deals.each do |deal|
   %h2= deal.good.title
@@ -8,3 +7,8 @@
     = link_to user.name, user_path(user)
     needs it
     = link_to "Give it", give_good_path(deal.good, to: user.id)
+
+%h1 Currently Waiting On
+- current_user.wanted_goods.where(available: true).each do |good|
+  = image_tag good.photo_url
+  = link_to good.title, good_path(good)
