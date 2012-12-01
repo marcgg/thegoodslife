@@ -14,8 +14,11 @@
           %h2= link_to good.title, good_path(good)
         %section.stats
           .stat
-            %span 10
-            cities
+            %span= good.all_locations_count
+            = "city".pluralize(good.all_locations_count)
           .stat
-            %span 4
-            owners
+            %span= good.all_owners_count
+            = "owner".pluralize(good.all_owners_count)
+          .stat
+            %span= good.all_milestones_count
+            = "anecdote".pluralize(good.all_milestones_count)

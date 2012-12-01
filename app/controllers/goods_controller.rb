@@ -14,6 +14,7 @@ class GoodsController < ApplicationController
       owner_id: params[:to],
       available: false
     )
+    @good.wanters.clear
     redirect_to dashboard_user_path(current_user)
   end
 

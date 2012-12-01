@@ -21,8 +21,19 @@
         = link_to "Request", want_good_path(@good)
 
     - if !@good.available && @good.owner_id == current_user.id
-      = link_to "Give", "#"
+      = link_to "Give", new_step_path(good_id: @good.id)
+
+    - @good.photo_urls.each do |url|
+      = image_tag url, style: "width:100px"
 
     %h2 Milestones
     - @good.steps.each do |step|
       = render partial: "/steps/items/#{step.type.demodulize.downcase}", locals: { step: step }
+
+    - if @good.owner == current_user
+      %details#create-milestone
+        %summary Add a milestone for this object
+        .form
+          = form_for Step.new do |form|
+            = render 'steps/new_milestone'
+            = submit_tag "Add", class: "saumon-btn"

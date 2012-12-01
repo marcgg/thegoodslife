@@ -28,7 +28,7 @@ class User < ActiveRecord::Base
   end
 
   def score
-    42
+    won_goods.count * 2 + offered_goods.count * 10 + available_goods.count * 5
   end
 
 end
