@@ -1,7 +1,7 @@
 = form_tag steps_path do
   %section.wrapper
-    %h1 Create a new deal
-    .baseline Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    %h1 Give Something
+    .baseline This is great that you want to give one of your objects away. Add all related informations here.
     .form
       = hidden_field_tag :owner_id, current_user.id
       = hidden_field_tag :good_id, params[:good_id]
@@ -20,8 +20,8 @@
       = text_field_tag :photo_url, nil, placeholder: 'Photo'
 
   %section.wrapper
-    %h1 Milestone
-    .baseline Curabitur blandit tempus porttitor.
+    %h1 How Did You Use This Product ?
+    .baseline Tell us something about your story with this object
 
     .form
       = render 'new_milestone'
