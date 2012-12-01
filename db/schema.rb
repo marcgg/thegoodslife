@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121201130102) do
+ActiveRecord::Schema.define(:version => 20121201130122) do
 
   create_table "goods", :force => true do |t|
     t.string   "title"
@@ -40,8 +40,11 @@ ActiveRecord::Schema.define(:version => 20121201130102) do
     t.string   "location"
     t.string   "photo_url"
     t.integer  "score"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+    t.string   "facebook_id"
   end
+
+  add_index "users", ["facebook_id"], :name => "index_users_on_facebook_id", :unique => true
 
 end

@@ -1,6 +1,14 @@
-$('.jsFacebookLogin').click ->
+$('.jsFacebookLogin').click (event) ->
+  event.preventDefault()
+  url = $(this).attr('href')
   FB.login (response) ->
     if response.status == 'connected'
-      console.log(response.authResponse)
-      FB.api '/me', (response) ->
-        console.log response
+      FB.api '/me', (user) ->
+        $.ajax url,
+          type: 'POST'
+          data:
+            user:
+              facebook_id: user.id
+              name: user.name
+        .done ->
+          window.location.reload()

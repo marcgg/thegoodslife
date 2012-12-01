@@ -9,4 +9,9 @@ Thegoodslife::Application.routes.draw do
   resources :goods
 
   get "bihi", to: "bihi#index"
+
+  post "login", to: "sessions#create"
+  get "logout", to: "sessions#destroy"
+
+  root to: "bihi#index"
 end
