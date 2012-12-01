@@ -1,12 +1,6 @@
 Thegoodslife::Application.routes.draw do
   get "search/index"
 
-  get "ben/view1"
-
-  get "ben/view2"
-
-  get "ben/view3"
-
   resources :steps
 
   get "give", to: "steps#new"
@@ -23,8 +17,6 @@ Thegoodslife::Application.routes.draw do
       get "dashboard"
     end
   end
-
-  get "bihi", to: "bihi#index"
 
   post "login", to: "sessions#create"
   get "login", to: "sessions#fake_login"

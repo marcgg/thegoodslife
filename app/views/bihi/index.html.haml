@@ -1,6 +1,0 @@
-#login
-  - if current_user
-    = "Hi #{current_user.name}!"
-    = link_to "Log Out", logout_path
-  - else
-    = link_to "Login using Facebook", login_path, class: 'jsFacebookLogin'
