@@ -9,7 +9,7 @@
             %input{type: 'submit'}
         %li= link_to 'Browse', '#', class: 'selected'
         - if current_user
-          %li= link_to 'My Account', '#'
+          %li= link_to 'My Account', account_path
           %li= link_to "Log Out", logout_path
         - else
           %li= link_to "Login", login_path, class: 'jsFacebookLogin'
