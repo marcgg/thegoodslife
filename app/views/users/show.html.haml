@@ -19,6 +19,7 @@
           %li
             = image_tag good.photo_url, style: "width: 100px"
             = link_to good.title, good_path(good)
+
     #available-goods
       %span.count= @user.available_goods.count
       Goods available

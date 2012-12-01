@@ -35,5 +35,6 @@
         %summary Add a milestone for this object
         .form
           = form_for Step.new do |form|
+            = text_field_tag "add_milestone_to_good", @good.id
             = render 'steps/new_milestone'
             = submit_tag "Add", class: "saumon-btn"
