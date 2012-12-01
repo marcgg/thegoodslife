@@ -4,11 +4,18 @@
     .baseline Lorem ipsum dolor sit amet, consectetur adipiscing elit.
     .form
       = hidden_field_tag :owner_id, current_user.id
+      %label{ for:'title' } Title
       = text_field_tag :title, nil, placeholder: 'Velo, Tent, Bag, Book...'
-      = select_tag :category, options_for_select(@categories.map{|c| [c,c]})
+      %label Category
+      .selects
+        = select_tag :category, options_for_select(@categories.map{|c| [c,c]})
+      %label{ for:'location' } Location
       = text_field_tag :location, nil, placeholder: 'Location'
+      %label{ for:'good_description' } Description
       = text_area_tag :good_description, nil, placeholder: 'Description'
+      %label{ for:'message' } Modalities of the deal
       = text_area_tag :message, nil, placeholder: 'Modalities'
+      %label{ for:'photo_url' } Photo
       = text_field_tag :photo_url, nil, placeholder: 'Photo'
 
   %section.wrapper
@@ -16,9 +23,14 @@
     .baseline Curabitur blandit tempus porttitor.
 
     .form
+      %label{ for:'ml_location' } Location
       = text_field_tag :ml_location, nil, placeholder: 'Location'
-      = date_select nil, :affected_date
+      %label Date
+      .selects
+        = date_select nil, :affected_date
+      %label{ for:'ml_photo_url' } Photo
       = text_field_tag :ml_photo_url, nil, placeholder: 'Photo'
+      %label{ for:'ml_message' } Message
       = text_area_tag :ml_message, nil, placeholder: 'Story of your object'
 
       = submit_tag "Give", class: "saumon-btn"

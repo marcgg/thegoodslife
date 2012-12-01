@@ -8,11 +8,11 @@ gem 'rails', '3.2.9'
 gem 'pg', group: :pg
 gem 'haml-rails'
 gem 'mysql2'
+gem 'thin'
 
 group :development do
   gem 'pry'
   gem 'quiet_assets'
-  gem 'thin'
 end
 
 # Gems used only for assets and not required

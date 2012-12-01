@@ -1,4 +1,4 @@
-%h1= current_user.name
+%h1= user_link current_user
 = image_tag current_user.photo_url
 = form_for current_user do |f|
   = f.text_area :bio

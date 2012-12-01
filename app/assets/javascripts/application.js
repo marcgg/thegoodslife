@@ -2,4 +2,3 @@
 //= require jquery_ujs
 
 //= include facebook
-//= include ben
