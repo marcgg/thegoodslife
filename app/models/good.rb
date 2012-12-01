@@ -1,6 +1,6 @@
 class Good < ActiveRecord::Base
   attr_accessible :category_id, :description, :title, :owner_id
-  has_many :steps
+  has_many :steps, inverse_of: :good
   belongs_to :owner, class_name: "User"
 
   def photo_urls
