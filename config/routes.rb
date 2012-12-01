@@ -11,7 +11,8 @@ Thegoodslife::Application.routes.draw do
   get "bihi", to: "bihi#index"
 
   post "login", to: "sessions#create"
+  get "login", to: "sessions#fake_login"
   get "logout", to: "sessions#destroy"
 
-  root to: "bihi#index"
+  root to: "goods#index"
 end
