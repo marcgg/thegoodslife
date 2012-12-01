@@ -26,4 +26,8 @@ class Good < ActiveRecord::Base
     Steps::Milestone.where(good_id: self.id).count
   end
 
+  def latest_deal
+    steps.detect(&:open?)
+  end
+
 end

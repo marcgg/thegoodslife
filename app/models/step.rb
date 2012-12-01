@@ -11,4 +11,8 @@ class Step < ActiveRecord::Base
   def lat
     "48.#{self.id * 45}"
   end
+
+  def open?
+    false
+  end
 end
