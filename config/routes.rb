@@ -5,6 +5,8 @@ Thegoodslife::Application.routes.draw do
 
   get "ben/view3"
 
+  resources :deals
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
