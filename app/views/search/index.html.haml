@@ -3,8 +3,6 @@
     %h1
       Results for
       %span #{params[:search]}
-  - else
-    %h1 Browsing...
   .goods
     - @goods.each do |good|
       %article.good.jsGoodLink
