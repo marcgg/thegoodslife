@@ -3,7 +3,7 @@
 - current_user.available_deals.each do |deal|
   %h2
     = image_tag deal.photo_url, style: "width:100px"
-    = deal.good.title
+    = link_to deal.good.title, good_path(deal.good)
   - deal.good.wanters.each do |user|
     = image_tag user.photo_url
     = link_to user.name, user_path(user)
