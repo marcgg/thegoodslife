@@ -15,11 +15,11 @@
 
     = javascript_include_tag 'application'
 
-    .fb-root
+    #fb-root
     :javascript
       window.fbAsyncInit = function() {
         FB.init({
-          appId      : Thegoodslife::Application.config.facebook.app_id,
+          appId      : #{Thegoodslife::Application.config.facebook.app_id},
           status     : true,
           cookie     : true,
           xfbml      : true
