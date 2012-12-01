@@ -1,6 +1,6 @@
 class StepsController < ApplicationController
   def new
-    @categories = ["Antiques","Art","Baby","Books","Business & Industrial","Cameras & Photo","Cell Phones & PDAs","Clothing, Shoes & Accessories","Coins & Paper Money","Collectibles","Computers & Networking","Consumer Electronics","Crafts","Dolls & Bears","DVDs & Movies","eBay Motors","Entertainment Memorabilia","Gift Certificates","Health & Beauty","Home & Garden","Jewelry & Watches","Music","Musical Instruments","Pottery & Glass","Real Estate","Specialty Services","Sporting Goods","Sports Mem, Cards & Fan Shop","Stamps","Tickets","Toys & Hobbies","Travel","Video Games","Everything Else"]
+    @categories = ["Antiques","Art","Baby","Books","Business & Industrial","Cameras & Photo","Cell Phones & PDAs","Clothing, Shoes & Accessories","Coins & Paper Money","Collectibles","Computers & Networking","Consumer Electronics","Crafts","Dolls & Bears","DVDs & Movies","Entertainment Memorabilia","Gift Certificates","Health & Beauty","Home & Garden","Jewelry & Watches","Music","Musical Instruments","Pottery & Glass","Real Estate","Specialty Services","Sporting Goods","Sports Mem, Cards & Fan Shop","Stamps","Tickets","Toys & Hobbies","Travel","Video Games","Everything Else"]
   end
 
   def show
@@ -28,7 +28,7 @@ class StepsController < ApplicationController
       good_id:      good.id
     )
 
-    if params[:ml_message]
+    if params[:ml_message].present?
       milestone = Steps::Milestone.create!(
         message:       params[:ml_message],
         location:      params[:ml_location],
