@@ -9,7 +9,11 @@ gem 'pg', group: :pg
 gem 'haml-rails'
 gem 'mysql2'
 
-gem 'pry', group: :development
+group :development do
+  gem 'pry'
+  gem 'quiet_assets'
+  gem 'thin'
+end
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -26,6 +30,8 @@ end
 gem 'jquery-rails'
 gem 'compass'
 gem 'compass-rails'
+
+
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

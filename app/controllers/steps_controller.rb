@@ -10,6 +10,8 @@ class StepsController < ApplicationController
   end
 
   def create
+    affected = Time.parse("#{params["affected_date(1i)"]}-#{params["affected_date(2i)"]}-#{params["affected_date(3i)"]}")
+
     good = Good.create!(
       description:  params[:good_description],
       title:        params[:title],
@@ -26,11 +28,12 @@ class StepsController < ApplicationController
     )
 
     milestone = Steps::Milestone.create!(
-      message:      params[:ml_message],
-      location:     params[:ml_location],
-      photo_url:    params[:photo_url],
-      owner_id:     params[:owner_id],
-      good_id:      good.id
+      message:       params[:ml_message],
+      location:      params[:ml_location],
+      photo_url:     params[:photo_url],
+      owner_id:      params[:owner_id],
+      good_id:       good.id,
+      affected_date: affected
     )
 
     redirect_to good_path(good)

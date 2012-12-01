@@ -3,22 +3,23 @@
     %h1 Create a new deal
     .baseline Lorem ipsum dolor sit amet, consectetur adipiscing elit.
     .form
-      = text_field_tag :owner_id
+      = text_field_tag :owner_id, current_user.id
       = text_field_tag :title, nil, placeholder: 'Velo, Tent, Bag, Book...'
-      = text_area_tag :category_id, nil, placeholder: 'Category'
+      = text_field_tag :category_id, nil, placeholder: 'Category'
       = text_field_tag :location, nil, placeholder: 'Location'
       = text_area_tag :good_description, nil, placeholder: 'Description'
-      = text_area_tag :message, nil, placeholder: 'Story of your object'
+      = text_area_tag :message, nil, placeholder: 'Modalities'
       = text_field_tag :photo_url, nil, placeholder: 'Photo'
 
   %section.wrapper
     %h1 Milestone
     .baseline Curabitur blandit tempus porttitor.
-  
+
     .form
       = text_field_tag :ml_location, nil, placeholder: 'Location'
+      = date_select nil, :affected_date
       = text_field_tag :ml_photo_url, nil, placeholder: 'Photo'
       = text_area_tag :ml_message, nil, placeholder: 'Story of your object'
-  
+
       = submit_tag "Give", class: "saumon-btn"
 
