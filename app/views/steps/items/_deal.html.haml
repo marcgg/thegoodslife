@@ -1,8 +1,5 @@
 %article.step.deal.jsMilestone{'data-img'=> step.photo_url, 'data-lat'=> step.lat, 'data-long'=> step.long}
-  - if step.open?
-    = image_tag step.owner.photo_url, class: 'profil-pic'
-  - else
-    = image_tag step.winner.photo_url, class: 'profile-pic'
+  = image_tag step.main_actor.photo_url, class: 'profil-pic'
   .date= step.affected_date.strftime("%Y")
 
   - if step.open?
