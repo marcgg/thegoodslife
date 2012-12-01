@@ -12,7 +12,7 @@
         %li= link_to 'Give', give_path
         - if current_user
           %li.dropdown
-            = link_to 'My Account', 'profile_path'
+            = link_to 'My Account', current_user
             %ul
               %li= link_to 'My request', account_path
               %li= link_to 'Edit account', account_path

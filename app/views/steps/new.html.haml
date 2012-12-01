@@ -3,11 +3,11 @@
     %h1 Create a new deal
     .baseline Lorem ipsum dolor sit amet, consectetur adipiscing elit.
     .form
-      = text_field_tag :owner_id, current_user.id, class: 'none'
+      = hidden_field_tag :owner_id, current_user.id
       %label{ for:'title' } Title
       = text_field_tag :title, nil, placeholder: 'Velo, Tent, Bag, Book...'
-      %label{ for:'category_id' } Category
-      = text_field_tag :category_id, nil, placeholder: 'Category'
+      %label Category
+      = select_tag :category, options_for_select(@categories.map{|c| [c,c]})
       %label{ for:'location' } Location
       = text_field_tag :location, nil, placeholder: 'Location'
       %label{ for:'good_description' } Description
