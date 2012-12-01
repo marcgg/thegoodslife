@@ -1,6 +1,12 @@
-%h1= user_link current_user
-= image_tag current_user.photo_url
-= form_for current_user do |f|
-  = f.text_area :bio
-  = f.text_field :location
-  = f.submit
+%section.wrapper
+  %h1
+    = image_tag current_user.photo_url
+    = user_link current_user
+
+  .form
+    = form_for current_user do |f|
+      %label Bio
+      = f.text_area :bio, placeholder: "Tell us about yourself"
+      %label Location
+      = f.text_field :location, placeholder: "Where are you at?"
+      = f.submit
