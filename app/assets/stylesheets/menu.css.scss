@@ -36,6 +36,9 @@ header{
 					text-decoration:none;
 					color:$saumon_lidl;
 					@include border-radius(3px);
+					@include transition-property(background, color);
+					@include transition-duration(0.1s);
+					@include transition-timing-function(linear);
 					&.selected, &:hover{
 						background:$saumon_fume;
 					}
@@ -53,6 +56,7 @@ header{
 						}
 						ul{
 							display:block;
+							background:$saumon_fume;
 						}
 						&> a{
 							background:$saumon_fume;
@@ -64,7 +68,7 @@ header{
 						top:35px;
 						right:0;
 						padding-bottom:7px;
-						background:$saumon_fume;
+						background:none;
 						@include border-bottom-radius(3px);
 						@include border-top-left-radius(3px);
 						li{
@@ -91,7 +95,7 @@ header{
 						border:0;
 						background:$saumon;
 						@include transition-property(width, background, color);
-						@include transition-duration(0.2s);
+						@include transition-duration(0.1s);
 						@include transition-timing-function(linear);
 						&:focus{
 							width:200px;
