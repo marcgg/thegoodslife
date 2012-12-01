@@ -8,7 +8,7 @@ class Good < ActiveRecord::Base
 
 
   def photo_urls
-    steps.map(&:photo_url).compact
+    steps.map(&:photo_url).collect{|a| a unless a.blank? }.compact
   end
 
   def photo_url
