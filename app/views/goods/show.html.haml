@@ -1,20 +1,28 @@
-%h1= @good.title
-%p= @good.description
-Owner is #{user_link(@good.owner)}
-= image_tag @good.owner.photo_url
+%article.single-good#jsGoodPage
+  .good-header
+    .wrapper
+      .photos
+        #jsBigPhoto.big-photo{style:"background-image:url(#{@good.photo_url})"}
+        .photos-list
+          - @good.photo_urls.each do |url|
+            .photo.jsPhotoList{style:"background-image:url(#{url})", 'data-img' => url}
+      .map
+        #jsMap
+  .good-content.wrapper
+    %h1= @good.title
+    %p= @good.description
+    Owner is #{user_link(@good.owner)}
+    = image_tag @good.owner.photo_url
 
-- if @good.available? && @good.owner_id != current_user.id
-  - if @good.wanters.include?(current_user)
-    Already requested
-  - else
-    = link_to "Request", want_good_path(@good)
+    - if @good.available? && @good.owner_id != current_user.id
+      - if @good.wanters.include?(current_user)
+        Already requested
+      - else
+        = link_to "Request", want_good_path(@good)
 
-- if !@good.available && @good.owner_id == current_user.id
-  = link_to "Give", "#"
+    - if !@good.available && @good.owner_id == current_user.id
+      = link_to "Give", "#"
 
-- @good.photo_urls.each do |url|
-  = image_tag url, style: "width:100px"
-
-%h2 Milestones
-- @good.steps.each do |step|
-  = render partial: "/steps/items/#{step.type.demodulize.downcase}", locals: { step: step }
+    %h2 Milestones
+    - @good.steps.each do |step|
+      = render partial: "/steps/items/#{step.type.demodulize.downcase}", locals: { step: step }

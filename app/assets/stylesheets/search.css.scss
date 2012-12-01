@@ -28,16 +28,15 @@
 				overflow:hidden;
 				background:#888;
 				margin-bottom:10px;
-				@include border-radius(3px);
+				@include border-radius(2px);
 				.photo{
 					position:absolute;
 					top:0;
 					left:0;
 					width:200px;
 					height:230px;
-					background-position:center center;
-					-webkit-background-size:cover;
-					@include border-radius(3px);
+					@include coverBg();
+					@include border-radius(2px);
 					@include transition-property(top,border-radius);
 					@include transition-duration(0.1s);
 					@include transition-timing-function(linear);
@@ -48,7 +47,7 @@
 					left:0;
 					height:75px;
 					background:#3bb2d0;
-					@include border-bottom-radius(3px);
+					@include border-bottom-radius(2px);
 					@include transition-property(top);
 					@include transition-duration(0.1s);
 					@include transition-timing-function(linear);

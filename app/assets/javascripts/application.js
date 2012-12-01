@@ -3,3 +3,4 @@
 
 //= include facebook
 //= include search
+//= include goods

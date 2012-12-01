@@ -1,0 +1,82 @@
+@import "mixins";
+
+.single-good{
+	@include clearfix();
+	.good-header{
+		position:absolute;
+		top:105px;
+		right:0;
+		left:0;
+		padding-top:20px;
+		background:#fff;
+		@include clearfix();
+		&:before{
+			content:'';
+			position:absolute;
+			bottom:-15px;
+			right:0;
+			left:0;
+			height:15px;
+			background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 1.00)),to(rgba(255, 255, 255, 0.00)));
+		}
+		.photos{
+			float:left;
+			width:500px;
+			margin-right:20px;
+			.big-photo{
+				width:500px;
+				height:400px;
+				margin-bottom:10px;
+				@include coverBg();
+				@include border-radius(2px);
+				@include transition(height 0.1s linear);
+			}
+			.photos-list{
+				@include clearfix();
+				width:500px;
+				height:45px;
+				overflow:hidden;
+				overflow-x:auto;
+				.photo{
+					float:left;
+					width:45px;
+					height:45px;
+					margin-right:10px;
+					@include coverBg();
+					@include border-radius(2px);
+					cursor:pointer;
+				}
+			}
+		}
+		.map{
+			float:left;
+			width:340px;
+			height:400px;
+			background:#3bb2d0;
+			@include border-radius(2px);
+			@include transition(height 0.1s linear);
+		}
+	}
+	.good-content{
+		margin-top: 525px;
+		@include transition(margin-top 0.1s linear);
+	}
+	&.blocked{
+		.good-header{
+			position:fixed;
+			top:-10px;
+			.photos{
+				.big-photo{
+					height:300px;
+				}
+			}
+			.map{
+				height:300px;
+			}
+		}
+		.good-content{
+			margin-top: 425px;
+			margin-bottom:100px;
+		}
+	}
+}

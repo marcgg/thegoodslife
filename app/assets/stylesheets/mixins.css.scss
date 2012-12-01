@@ -12,3 +12,8 @@
     height: 0;
   }
 }
+
+@mixin coverBg(){
+	background-position:center center;
+	-webkit-background-size:cover;
+}
