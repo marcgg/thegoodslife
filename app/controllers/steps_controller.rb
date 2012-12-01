@@ -29,13 +29,15 @@ class StepsController < ApplicationController
       )
     end
 
-    deal = Steps::Deal.create!(
-      message:      params[:message],
-      location:     params[:location],
-      photo_url:    params[:photo_url],
-      owner_id:     params[:owner_id],
-      good_id:      good.id
-    )
+    if params[:message].present?
+      deal = Steps::Deal.create!(
+        message:      params[:message],
+        location:     params[:location],
+        photo_url:    params[:photo_url],
+        owner_id:     params[:owner_id],
+        good_id:      good.id
+      )
+    end
 
     milestone_params = params[:milestone]
     if milestone_params[:message].present?
