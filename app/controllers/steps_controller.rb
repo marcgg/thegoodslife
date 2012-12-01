@@ -9,6 +9,9 @@ class StepsController < ApplicationController
     @deals = Steps::Deal.all
   end
 
+  def search
+  end
+
   def create
     good = Good.create!(
       description:  params[:good_description],
