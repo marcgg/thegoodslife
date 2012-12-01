@@ -1,2 +1,16 @@
-= "hello"
-= yield
+!!! 5
+%html
+  %head
+    %meta(content="text/html; charset=utf-8" http-equiv="Content-Type")
+    %title TheGoodsLife
+    = stylesheet_link_tag 'application', media: :all
+
+  %body
+    = render partial: "/shared/app_menu"
+
+    #content.page-wrapper
+      = yield
+		
+    = render partial: "/shared/footer"
+
+    = javascript_include_tag 'application'
