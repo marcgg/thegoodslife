@@ -1,4 +1,10 @@
 Thegoodslife::Application.routes.draw do
+  get "ben/view1"
+
+  get "ben/view2"
+
+  get "ben/view3"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
