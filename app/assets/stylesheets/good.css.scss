@@ -41,11 +41,21 @@
 			}
 		}
 		.map{
+			position:relative;
 			width:340px;
 			height:400px;
 			background:#3bb2d0;
 			@include border-radius(2px);
+			overflow:hidden;
 			@include transition(height 0.2s linear);
+			#jsMap{
+				position:absolute;
+				top:0;
+				left:0;
+				width:340px;
+				height:400px;
+				@include transition(top 0.2s linear);
+			}
 		}
 	}
 	.good-content{
@@ -162,6 +172,9 @@
 			}
 			.map{
 				height:195px;
+				#jsMap{
+					top:-102px;
+				}
 			}
 		}
 		.good-content{

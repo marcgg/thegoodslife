@@ -4,6 +4,8 @@
     %meta(content="text/html; charset=utf-8" http-equiv="Content-Type")
     %title TheGoodsLife
     = stylesheet_link_tag 'application', media: :all
+    %script{src:'http://api.tiles.mapbox.com/mapbox.js/v0.6.6/mapbox.js'}
+    %link{href:'http://api.tiles.mapbox.com/mapbox.js/v0.6.6/mapbox.css', rel:'stylesheet'}
 
   %body
     = render partial: "/shared/app_menu"

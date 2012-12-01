@@ -1,6 +1,15 @@
 class GoodsController < ApplicationController
   def show
     @good = Good.find(params[:id])
+    @my_points = "["
+    data = @good.steps.map do |step| 
+      "{'geometry': { 
+      'type': 'Point', 'coordinates': [#{step.long}, #{step.lat}]}, 
+      'properties': { 'image': '//d7q85mn3faw4b.cloudfront.net/clients/popmarket/offre-decouverte/map-marker.png' }
+      }"
+    end
+    @my_points += data.join(",")
+    @my_points += "]"
   end
 
   def index

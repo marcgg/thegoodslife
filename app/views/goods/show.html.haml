@@ -10,6 +10,9 @@
       .col1
         .map
           #jsMap
+          %script
+            var myPoints = #{@my_points};
+          	
         - if @good.available?
           - if @good.owner_id == current_user.id
             .big-btn.disable Give

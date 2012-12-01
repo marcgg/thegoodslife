@@ -8,7 +8,7 @@
             = form_tag search_index_path, method: "get" do
               = text_field_tag :search, nil, placeholder: "Search"
               = submit_tag
-        %li= link_to 'Browse', search_index_path, class: 'selected'
+        %li= link_to 'Browse', search_index_path
         %li= link_to 'Give', give_path
         - if current_user
           %li.dropdown
