@@ -31,5 +31,5 @@ Thegoodslife::Application.routes.draw do
   get "logout", to: "sessions#destroy"
   get "account", to: "users#edit_current"
 
-  root to: "goods#index"
+  root to: "search#index"
 end
