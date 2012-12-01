@@ -15,4 +15,16 @@ class Good < ActiveRecord::Base
     photo_urls.first
   end
 
+  def all_locations_count
+    Step.where(good_id: self.id).count("location")
+  end
+
+  def all_owners_count
+    Steps::Deal.where(good_id: self.id).count("owner_id")
+  end
+
+  def all_milestones_count
+    Steps::Milestone.where(good_id: self.id).count
+  end
+
 end

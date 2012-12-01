@@ -18,6 +18,7 @@ Owner is #{user_link(@good.owner)}
 %h2 Milestones
 - @good.steps.each do |step|
   = render partial: "/steps/items/#{step.type.demodulize.downcase}", locals: { step: step }
+
 - if @good.owner == current_user
   %details#create-milestone
     %summary Add a milestone for this object
