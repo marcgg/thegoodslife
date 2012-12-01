@@ -1,22 +1,30 @@
-%h1 Requests About My Goods
+.wrapper.dashboard
+  %h1 Requests About My Goods
 
-- current_user.available_deals.each do |deal|
-  %h2
-    = image_tag deal.photo_url, style: "width:100px"
-    = link_to deal.good.title, good_path(deal.good)
-  - if deal.good.wanters.empty?
-    No one yet
-  - deal.good.wanters.each do |user|
-    = image_tag user.photo_url
-    = link_to user.name, user_path(user)
-    (#{user.score})
-    asked for it the #{Want.where(user_id: user.id, good_id: deal.good.id).first.created_at.strftime("%d %B %Y")}
-    = link_to "Give", give_good_path(deal.good, to: user.id)
-  %br
-  %br
-  %br
-  %br
-%h1 Currently Waiting On
-- current_user.wanted_goods.where(available: true).each do |good|
-  = image_tag good.photo_url, style: "width:100px"
-  = link_to good.title, good_path(good)
+  - current_user.available_deals.each do |deal|
+    .deal-photo
+      = image_tag deal.photo_url
+      = link_to deal.good.title, good_path(deal.good)
+
+    .wanters
+      - if deal.good.wanters.empty?
+        .no-one No one yet
+      - deal.good.wanters.each do |user|
+        .wanter
+          = link_to "Give", give_good_path(deal.good, to: user.id), class: "give link"
+          = image_tag user.photo_url
+          .description
+            = link_to user.name, user_path(user)
+            (#{user.score})
+            asked for it the #{Want.where(user_id: user.id, good_id: deal.good.id).first.created_at.strftime("%d %B %Y")}
+
+  %h1 Currently Waiting On
+  .wanters
+    - current_user.wanted_goods.where(available: true).each do |good|
+      .wanter
+        = link_to "Waiting", "#", class: "waiting link"
+        = image_tag good.photo_url
+        .description
+          = link_to good.title, good_path(good)
+          offered by
+          = link_to good.owner.name, user_path(good.owner)

@@ -1,0 +1,75 @@
+.dashboard{
+  .deal-photo{
+    margin-top: 40px;
+    font-size: 2em;
+    background-color: #f5f5f5;
+    padding: 20px;
+    height: 50px;
+    a{
+      color: #666;
+      text-decoration: none;
+      margin-left: 20px;
+      margin-top: 12px;
+      display: inline-block;
+    }
+    a:hover{
+      text-decoration: underline;
+    }
+    img{
+      float: left;
+      width: 50px;
+      height: 50px;
+    }
+  }
+
+  .wanters{
+    margin:  20px 40px;
+    padding: 0px 20px;
+    border-left: 1px solid #ccc;
+    .wanter{
+      height: 50px;
+      .link{
+        float: right;
+        padding: 10px;
+        text-decoration: none;
+        font-weight: bold;
+        border-radius: 5px;
+        color: #fff;
+        margin-top: 10px;
+        font-size: 1.2em;
+      }
+      .waiting{
+        background-color: #e4bf5d;
+        border: 1px solid #e4bf5d;
+      }
+      .waiting:hover{
+        background-color: #ebca74;
+      }
+      .give{
+        background-color: #73d749;
+        border: 1px solid #73d749;
+      }
+      .give:hover{
+        background-color: #7ddd54;
+      }
+      img{
+        float: left;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+      }
+      .description{
+        font-size: 1.2em;
+        padding: 20px 70px;
+        a{
+          font-weight: bold;
+          color: #666;
+          text-decoration: none;
+        }
+        a:hover{
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
