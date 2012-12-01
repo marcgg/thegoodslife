@@ -1,11 +1,10 @@
 class Good < ActiveRecord::Base
   attr_accessible :category_id, :description, :title, :owner_id, :available
-  has_many :steps, inverse_of: :good, dependent: :destroy
+  has_many :steps, inverse_of: :good, dependent: :destroy, order: 'affected_date DESC'
   belongs_to :owner, class_name: "User"
 
   has_many :wanters, through: :wants, source: :user
   has_many :wants, dependent: :destroy
-
 
   def photo_urls
     steps.map(&:photo_url).collect{|a| a unless a.blank? }.compact
