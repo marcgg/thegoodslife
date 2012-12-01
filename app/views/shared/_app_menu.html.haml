@@ -12,10 +12,12 @@
         %li= link_to 'Give', give_path
         - if current_user
           %li.dropdown
-            = link_to 'My Account', current_user
+            %a{ href: user_path(current_user) }
+              = image_tag(current_user.photo_url, class: "nav-picto")
+              My Account
             %ul
-              %li= link_to 'My requests', dashboard_user_path(current_user)
-              %li= link_to 'Edit account', account_path
-              %li= link_to "Log Out", logout_path
+              %li.subnav-link= link_to 'My requests', dashboard_user_path(current_user)
+              %li.subnav-link= link_to 'Edit account', account_path
+              %li.subnav-link= link_to "Log Out", logout_path
         - else
           %li= link_to "Login", login_path, class: 'jsFacebookLogin'

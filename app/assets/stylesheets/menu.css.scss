@@ -1,5 +1,17 @@
 @import "mixins";
 
+.nav-picto{
+  width: 25px;
+  border-radius: 50%;
+  float: left;
+  margin-right: 10px;
+  margin-top: 5px;
+}
+
+.subnav-link{
+  width: 160px;
+}
+
 body > header{
 	z-index:200;
 	height:35px;

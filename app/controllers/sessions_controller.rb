@@ -11,6 +11,7 @@ class SessionsController < ApplicationController
   end
 
   def fake_login
-    session[:user_id] = User.first
+    session[:user_id] = params[:u] if params.key?(:u)
+    redirect_to root_url
   end
 end
