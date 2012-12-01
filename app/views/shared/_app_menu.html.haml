@@ -5,10 +5,13 @@
       %ul
         %li
           %fieldset.search-form
-            %input{type: 'text', placeholder: 'Search'}
-            %input{type: 'submit'}
-        %li= link_to 'Browse', '#', class: 'selected'
-        %li= link_to 'My Account', '#'
-        -# my account ou login selon...
-        -# %li= link_to 'Login', '#'
-        %li= link_to 'Give', '#'
+            = form_tag search_index_path, method: "get" do
+              = text_field_tag :search, nil, placeholder: "Search"
+              = submit_tag
+        %li= link_to 'Browse', search_index_path, class: 'selected'
+        - if current_user
+          %li= link_to 'My Account', account_path
+          %li= link_to "Log Out", logout_path
+        - else
+          %li= link_to "Login", login_path, class: 'jsFacebookLogin'
+        %li= link_to 'Give', give_path

@@ -7,7 +7,8 @@ class Good < ActiveRecord::Base
     steps.map(&:photo_url)
   end
 
-  def want_possible?
-    
+  def photo_url
+    photo_urls.first
   end
+
 end

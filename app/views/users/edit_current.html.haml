@@ -1,0 +1,5 @@
+%h1= current_user.name
+= form_for current_user do |f|
+  = f.text_area :bio
+  = f.text_field :location
+  = f.submit
