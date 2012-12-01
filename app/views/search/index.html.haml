@@ -1,8 +1,10 @@
 %section.wrapper.search-page
-  -# if y'a un terme dans la serach
-  %h1
-    Results for
-    %span Blabla
+  - if params[:search].present?
+    %h1
+      Results for
+      %span #{params[:search]}
+  - else
+    %h1 Browsing...
   .goods
     - @goods.each do |good|
       %article.good.jsGoodLink
