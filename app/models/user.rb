@@ -10,9 +10,13 @@ class User < ActiveRecord::Base
     foreign_key: :owner_id,
     conditions: 'winner_id IS NULL'
 
+
   has_many :won_goods, through: :won_deals, source: :good
   has_many :offered_goods, through: :offered_deals, source: :good
   has_many :available_goods, through: :available_deals, source: :good
+
+  has_many :wanted_goods, through: :wants, source: :good
+  has_many :wants
 
   def photo_url
     "http://graph.facebook.com/#{facebook_id}/picture"

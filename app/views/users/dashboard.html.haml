@@ -1,0 +1,16 @@
+%h1 Requests about my goods
+
+- current_user.available_deals.each do |deal|
+  %h2
+    = image_tag deal.photo_url, style: "width:100px"
+    = link_to deal.good.title, good_path(deal.good)
+  - deal.good.wanters.each do |user|
+    = image_tag user.photo_url
+    = link_to user.name, user_path(user)
+    needs it
+    = link_to "Give it", give_good_path(deal.good, to: user.id)
+
+%h1 Currently Waiting On
+- current_user.wanted_goods.where(available: true).each do |good|
+  = image_tag good.photo_url, style: "width:100px"
+  = link_to good.title, good_path(good)
