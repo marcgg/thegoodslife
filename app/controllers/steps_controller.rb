@@ -12,7 +12,6 @@ class StepsController < ApplicationController
   end
 
   def create
-    affected = Time.parse("#{params["affected_date(1i)"]}-#{params["affected_date(2i)"]}-#{params["affected_date(3i)"]}")
     good = nil
     if params[:good_id].present?
       good = Good.find(params[:good_id])
@@ -38,7 +37,7 @@ class StepsController < ApplicationController
       good_id:      good.id
     )
 
-    milestone_params = params[:milestone] || {}
+    milestone_params = params[:milestone]
     if milestone_params[:message].present?
       affected = Time.parse("#{milestone_params["affected_date(1i)"]}-#{milestone_params["affected_date(2i)"]}-#{milestone_params["affected_date(3i)"]}")
 
