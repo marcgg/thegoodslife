@@ -9,7 +9,7 @@ header{
 			float:left;
 			line-height:35px;
 			font-size:25px;
-			font-weight:bold;
+			font-weight:800;
 			color:$saumon_lidl;
 			text-decoration:none;
 			span{
@@ -24,13 +24,14 @@ header{
 					display:inline-block;
 					line-height:35px;
 					font-size:14px;
-					font-weight:bold;
+					font-weight:700;
 					text-transform:uppercase;
 					padding:0 15px;
 					margin-left:30px;
 					text-decoration:none;
 					color:$saumon_lidl;
 					@include border-radius(3px);
+					@include transition(all 0.2s linear);
 					&.selected, &:hover{
 						background:$saumon_fume;
 					}
@@ -44,7 +45,7 @@ header{
 						width:60px;
 						line-height:20px;
 						font-size:14px;
-						font-weight:bold;
+						font-weight:700;
 						padding:0 15px;
 						margin-left:30px;
 						text-decoration:none;
@@ -57,6 +58,9 @@ header{
 							width:200px;
 							background:#fff !important;
 							color:$saumon !important;
+							&::-webkit-input-placeholder {
+								color:#fff;
+							}
 						}
 						&::-webkit-input-placeholder {
 							color:$saumon_lidl;

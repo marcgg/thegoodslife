@@ -1,5 +1,6 @@
-%h1 All deals
-= link_to "Create a new deal", new_step_path
+.wrapper
+  %h1 All deals
+  = link_to "Create a new deal", new_step_path
 
-- @deals.each do |deal|
-  = debug deal
+  - @deals.each do |deal|
+    = debug deal
