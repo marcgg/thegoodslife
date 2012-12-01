@@ -11,7 +11,11 @@
         %li= link_to 'Browse', search_index_path, class: 'selected'
         %li= link_to 'Give', give_path
         - if current_user
-          %li= link_to 'My Account', account_path
-          %li= link_to "Log Out", logout_path
+          %li.dropdown
+            = link_to 'My Account', 'profile_path'
+            %ul
+              %li= link_to 'My request', account_path
+              %li= link_to 'Edit account', account_path
+              %li= link_to "Log Out", logout_path
         - else
           %li= link_to "Login", login_path, class: 'jsFacebookLogin'
