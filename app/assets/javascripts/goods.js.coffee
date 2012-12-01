@@ -14,3 +14,12 @@ initGoodPage = () ->
 			$('#jsGoodPage').addClass('blocked')
 		else
 			$('#jsGoodPage').removeClass('blocked')
+	
+	$("body").delegate ".jsMilestone", "mouseover", (e) ->
+		e.preventDefault
+		$this = $(this)
+		imgUrl = $this.attr('data-img')
+		console.log imgUrl
+		if imgUrl != ''
+			$('#jsBigPhoto').css({'background-image': 'url('+imgUrl+')'})
+		
