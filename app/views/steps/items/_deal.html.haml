@@ -4,8 +4,8 @@
 
   %h4.title Deal
   - if step.open?
-    %p Good belongs to #{user_link(step.owner)}
-  - else
     .by #{user_link(step.owner)}
     %p
       #{step.owner.name} is giving this object!
+  - else
+    %p Good belongs to #{user_link(step.owner)}
