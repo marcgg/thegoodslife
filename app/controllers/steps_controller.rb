@@ -21,23 +21,26 @@ class StepsController < ApplicationController
         available:    true
       )
     else
-      good = Good.create!(
-        description:  params[:good_description],
-        title:        params[:title],
-        category_id:  params[:category_id],
-        owner_id:     params[:owner_id]
-      )
+      if params[:add_milestone_to_good].blank?
+        good = Good.create!(
+          description:  params[:good_description],
+          title:        params[:title],
+          category_id:  params[:category_id],
+          owner_id:     current_user.id
+        )
+
+        deal = Steps::Deal.create!(
+          message:      params[:message],
+          location:     params[:location],
+          photo_url:    params[:photo_url],
+          owner_id:     current_user.id,
+          good_id:      good.id
+        )
+      else
+        good = Good.find(params[:add_milestone_to_good])
+      end
     end
 
-    if params[:message].present?
-      deal = Steps::Deal.create!(
-        message:      params[:message],
-        location:     params[:location],
-        photo_url:    params[:photo_url],
-        owner_id:     params[:owner_id],
-        good_id:      good.id
-      )
-    end
 
     milestone_params = params[:milestone]
     if milestone_params[:message].present?
@@ -47,7 +50,7 @@ class StepsController < ApplicationController
         message:       milestone_params[:message],
         location:      milestone_params[:location],
         photo_url:     milestone_params[:photo_url],
-        owner_id:      params[:owner_id],
+        owner_id:      current_user.id,
         good_id:       good.id,
         affected_date: affected
       )
