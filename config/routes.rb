@@ -14,6 +14,7 @@ Thegoodslife::Application.routes.draw do
   resources :goods do
     member do
       get "want"
+      get "give"
     end
   end
   resources :search
