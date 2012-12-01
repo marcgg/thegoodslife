@@ -1,7 +1,11 @@
 %article.step.deal.jsMilestone{'data-img'=> step.photo_url, 'data-lat'=> step.lat, 'data-long'=> step.long}
   = image_tag step.owner.photo_url, class: 'profil-pic'
   .date= step.affected_date.strftime("%Y")
-  
+
   %h4.title Deal
-  .by #{user_link(step.owner)}
-  %p= step.message
+  - if step.open?
+    %p Good belongs to #{user_link(step.owner)}
+  - else
+    .by #{user_link(step.owner)}
+    %p
+      #{step.owner.name} is giving this object!

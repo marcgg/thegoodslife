@@ -23,12 +23,16 @@ initGoodPage = () ->
 
 	$(window).scroll ->
 		pos = $(document).scrollTop()
+		page = $('#jsGoodPage')
 		if pos > 110
-			$('#jsGoodPage').addClass('blocked')
+			page.addClass('blocked')
 		else
-			$('#jsGoodPage').removeClass('blocked')
-			map.addLayer(markerLayer).setExtent markerLayer.extent()
-			map.zoom(10, true);
+			if page.hasClass('blocked')
+				page.removeClass('blocked')
+				if $('#jsMap').hasClass('jsMoved')
+					$('#jsMap').removeClass('jsMoved')
+					map.addLayer(markerLayer).setExtent markerLayer.extent()
+					map.zoom(10);
 	
 	$("body").delegate ".jsMilestone", "mouseover", (e) ->
 		e.preventDefault
@@ -39,6 +43,7 @@ initGoodPage = () ->
 		if imgUrl != ''
 			$('#jsBigPhoto').css({'background-image': 'url('+imgUrl+')'})
 		if lat != '' && lon != ''
+			$('#jsMap').addClass('jsMoved')
 			map.ease.location({
 				lat: lat,
 				lon: lon
