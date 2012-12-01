@@ -3,9 +3,9 @@
     %h1 Create a new deal
     .baseline Lorem ipsum dolor sit amet, consectetur adipiscing elit.
     .form
-      = text_field_tag :owner_id, current_user.id
+      = hidden_field_tag :owner_id, current_user.id
       = text_field_tag :title, nil, placeholder: 'Velo, Tent, Bag, Book...'
-      = text_field_tag :category_id, nil, placeholder: 'Category'
+      = select_tag :category, options_for_select(@categories.map{|c| [c,c]})
       = text_field_tag :location, nil, placeholder: 'Location'
       = text_area_tag :good_description, nil, placeholder: 'Description'
       = text_area_tag :message, nil, placeholder: 'Modalities'

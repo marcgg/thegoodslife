@@ -1,5 +1,6 @@
 class StepsController < ApplicationController
   def new
+    @categories = ["Antiques","Art","Baby","Books","Business & Industrial","Cameras & Photo","Cell Phones & PDAs","Clothing, Shoes & Accessories","Coins & Paper Money","Collectibles","Computers & Networking","Consumer Electronics","Crafts","Dolls & Bears","DVDs & Movies","eBay Motors","Entertainment Memorabilia","Gift Certificates","Health & Beauty","Home & Garden","Jewelry & Watches","Music","Musical Instruments","Pottery & Glass","Real Estate","Specialty Services","Sporting Goods","Sports Mem, Cards & Fan Shop","Stamps","Tickets","Toys & Hobbies","Travel","Video Games","Everything Else"]
   end
 
   def show
@@ -27,14 +28,16 @@ class StepsController < ApplicationController
       good_id:      good.id
     )
 
-    milestone = Steps::Milestone.create!(
-      message:       params[:ml_message],
-      location:      params[:ml_location],
-      photo_url:     params[:photo_url],
-      owner_id:      params[:owner_id],
-      good_id:       good.id,
-      affected_date: affected
-    )
+    if params[:ml_message]
+      milestone = Steps::Milestone.create!(
+        message:       params[:ml_message],
+        location:      params[:ml_location],
+        photo_url:     params[:ml_photo_url],
+        owner_id:      params[:owner_id],
+        good_id:       good.id,
+        affected_date: affected
+      )
+    end
 
     redirect_to good_path(good)
   end
