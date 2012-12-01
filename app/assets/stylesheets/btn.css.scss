@@ -1,0 +1,28 @@
+@import "mixins";
+
+@mixin button(){
+  @include inline-block();
+	height:20px;
+	line-height:20px;
+	padding:7px 15px 8px 15px;
+	border:0;
+  font-size:14px;
+	font-weight:400;
+  text-decoration:none;
+	text-transform:uppercase;
+  color:#fff;
+  @include border-radius(3px);
+  cursor:pointer !important;
+}
+
+.saumon-btn{
+	@include button();
+	background:$saumon;
+}
+
+input{
+	&.saumon-btn{
+		height:35px;
+		padding:0 15px;
+	}
+}

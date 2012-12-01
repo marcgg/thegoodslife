@@ -1,39 +1,24 @@
-.wrapper
-  %h1 Create a new deal
-  = form_tag steps_path do
-    owner_id
-    = text_field_tag :owner_id
+= form_tag steps_path do
+  %section.wrapper
+    %h1 Create a new deal
+    .baseline Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    .form
+      = text_field_tag :owner_id
+      = text_field_tag :title, nil, placeholder: 'Velo, Tent, Bag, Book...'
+      = text_area_tag :category_id, nil, placeholder: 'Category'
+      = text_field_tag :location, nil, placeholder: 'Location'
+      = text_area_tag :good_description, nil, placeholder: 'Description'
+      = text_area_tag :message, nil, placeholder: 'Story of your object'
+      = text_field_tag :photo_url, nil, placeholder: 'Photo'
 
-    %label Title
-    = text_field_tag :title
-
-    %label Category
-    = text_area_tag :category_id
-
-
-
-    %label OBJECT Description
-    = text_area_tag :good_description
-
-    %label Location
-    = text_field_tag :location
-
-    %label DETAILS de l'annonce
-    = text_area_tag :message
-
-    %label Image
-    = text_field_tag :photo_url
-
-    %h3 Milestone
-
-    %label Location
-    = text_field_tag :ml_location
-
-    %label Commentaire
-    = text_area_tag :ml_message
-
-    %label Image
-    = text_field_tag :ml_photo_url
-
-    = submit_tag "Go"
+  %section.wrapper
+    %h1 Milestone
+    .baseline Curabitur blandit tempus porttitor.
+  
+    .form
+      = text_field_tag :ml_location, nil, placeholder: 'Location'
+      = text_field_tag :ml_photo_url, nil, placeholder: 'Photo'
+      = text_area_tag :ml_message, nil, placeholder: 'Story of your object'
+  
+      = submit_tag "Give", class: "saumon-btn"
 

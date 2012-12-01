@@ -3,17 +3,21 @@
 header{
 	height:35px;
 	padding:20px 0;
+	margin-bottom:50px;
 	background:$saumon;
+	@include box-shadow(0 0 5px rgba(0,0,0,0.3));
 	nav{
 		.logo{
 			float:left;
 			line-height:35px;
-			font-size:25px;
-			font-weight:800;
+			font-size:23px;
+			font-family:'Lato',Helvetica,Arial,sans-serif;
+			font-weight:400;
 			color:$saumon_lidl;
 			text-decoration:none;
 			span{
 				color:#fff;
+				font-weight:900;
 			}
 		}
 		ul{
@@ -76,6 +80,7 @@ header{
 						}
 					}
 					input[type=submit]{
+						display:none;
 						margin:0;
 						padding:0;
 						height:35px;
