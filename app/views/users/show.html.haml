@@ -4,39 +4,36 @@
   #description
     %h1= @user.name
     %p.bio= @user.bio
-    %p.location= link_to @user.location, '#'
+    - if @user.location
+      %p.location= link_to @user.location, '#'
   #score
     %span= @user.score
 
 #goods
-  #summary
-    #offered-count.goods-count
-      %span.count= @user.offered_goods.count
-      Goods offered
-    #available-count.goods-count
-      %span.count= @user.available_goods.count
-      Goods available
-    #taken-count.goods-count
-      %span.count= @user.won_goods.count
-      Goods taken
   #list
     #offered-goods
+      %span.count= @user.offered_goods.count
+      Goods offered
       %ol
         - @user.offered_goods.each do |good|
           %li
-            = image_tag good.photo_url
+            = image_tag good.photo_url, style: "width: 100px"
             = link_to good.title, good_path(good)
     #available-goods
+      %span.count= @user.available_goods.count
+      Goods available
       %ol
         - @user.available_goods.each do |good|
           %li
-            = image_tag good.photo_url
+            = image_tag good.photo_url, style: "width: 100px"
             = link_to good.title, good_path(good)
 
     #taken-goods
+      %span.count= @user.won_goods.count
+      Goods taken
       %ol
         - @user.won_goods.each do |good|
           %li
-            = image_tag good.photo_url
+            = image_tag good.photo_url, style: "width: 100px"
             = link_to good.title, good_path(good)
 
