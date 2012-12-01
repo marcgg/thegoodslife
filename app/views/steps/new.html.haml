@@ -1,0 +1,30 @@
+%h1 Create a new deal
+= form_tag "steps" do
+  owner_id
+  = text_field_tag :owner_id
+
+  %label Title
+  = text_field_tag :title
+
+  %label Location
+  = text_field_tag :location
+
+  %label Description
+  = text_area_tag :description
+
+  %label Image
+  = text_field_tag :photo_url
+
+  %h3 Milestone
+
+  %label Location
+  = text_field_tag :ml_location
+
+  %label Commentaire
+  = text_area_tag :ml_description
+
+  %label Image
+  = text_field_tag :ml_photo_url
+
+  = submit_tag "Go"
+
