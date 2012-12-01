@@ -1,7 +1,7 @@
-.step.deal
-  = step.affected_date.strftime("%d %B %Y")
+%article.step.deal.jsMilestone{'data-img'=> step.photo_url, 'data-location'=> '1.10,2.3'}
+  = image_tag step.owner.photo_url, class: 'profil-pic'
+  .date= step.affected_date.strftime("%Y")
   
-  Deal:
-  #{step.message}
-
-  by #{user_link(step.owner)}
+  %h4.title Deal
+  .by #{user_link(step.owner)}
+  %p= step.message

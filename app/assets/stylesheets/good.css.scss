@@ -108,6 +108,43 @@
 				text-transform:uppercase;
 			}
 		}
+		.step{
+			margin-bottom:10px;
+			position:relative;
+			margin-bottom:20px;
+			padding-left:40px;
+			min-height:40px;
+			.profil-pic{
+				position:absolute;
+				top:0;
+				left:0;
+				width:30px;
+				height:30px;
+				@include border-radius(50%);
+			}
+			.date{
+				position:absolute;
+				top:0;
+				right:0;
+				color:#000;
+			}
+			.title{
+				color:#ef8e00;
+				font-size:14px;
+				font-weight:700;
+				margin-bottom:4px;
+			}
+			.by{
+				font-size:12px;
+				color:$black_text;
+				margin-bottom:4px;
+				text-transform:uppercase;
+				a{
+					color:$black_text;
+					text-decoration:none;
+				}
+			}
+		}
 	}
 	&.blocked{
 		.good-header{

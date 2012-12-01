@@ -38,12 +38,13 @@
         .location= @good.owner.location
       %h2 Milestones
       - if @good.owner == current_user
-        %details#create-milestone
-          %summary Add a milestone for this object
-          .form
-            = form_for Step.new do |form|
-              = text_field_tag "add_milestone_to_good", @good.id
-              = render 'steps/new_milestone'
-              = submit_tag "Add", class: "saumon-btn"
+        .step
+          %details#create-milestone
+            %summary Add a milestone for this object
+            .form
+              = form_for Step.new do |form|
+                = text_field_tag "add_milestone_to_good", @good.id
+                = render 'steps/new_milestone'
+                = submit_tag "Add", class: "saumon-btn"
       - @good.steps.each do |step|
         = render partial: "/steps/items/#{step.type.demodulize.downcase}", locals: { step: step }
