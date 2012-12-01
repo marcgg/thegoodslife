@@ -10,7 +10,7 @@ Owner is #{user_link(@good.owner)}
     = link_to "Request", want_good_path(@good)
 
 - if !@good.available && @good.owner_id == current_user.id
-  = link_to "Give", "#"
+  = link_to "Give", new_step_path(good_id: @good.id)
 
 - @good.photo_urls.each do |url|
   = image_tag url, style: "width:100px"

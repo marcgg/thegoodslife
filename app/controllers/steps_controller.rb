@@ -1,6 +1,7 @@
 class StepsController < ApplicationController
   def new
     @categories = ["Antiques","Art","Baby","Books","Business & Industrial","Cameras & Photo","Cell Phones & PDAs","Clothing, Shoes & Accessories","Coins & Paper Money","Collectibles","Computers & Networking","Consumer Electronics","Crafts","Dolls & Bears","DVDs & Movies","Entertainment Memorabilia","Gift Certificates","Health & Beauty","Home & Garden","Jewelry & Watches","Music","Musical Instruments","Pottery & Glass","Real Estate","Specialty Services","Sporting Goods","Sports Mem, Cards & Fan Shop","Stamps","Tickets","Toys & Hobbies","Travel","Video Games","Everything Else"]
+    @good = Good.where(id: params[:good_id]).first
   end
 
   def show
@@ -12,13 +13,22 @@ class StepsController < ApplicationController
 
   def create
     affected = Time.parse("#{params["affected_date(1i)"]}-#{params["affected_date(2i)"]}-#{params["affected_date(3i)"]}")
-
-    good = Good.create!(
-      description:  params[:good_description],
-      title:        params[:title],
-      category_id:  params[:category_id],
-      owner_id:     params[:owner_id]
-    )
+    good = nil
+    if params[:good_id].present?
+      good = Good.find(params[:good_id])
+      good.update_attributes(
+        description:  params[:good_description],
+        title:        params[:title],
+        available:    true
+      )
+    else
+      good = Good.create!(
+        description:  params[:good_description],
+        title:        params[:title],
+        category_id:  params[:category_id],
+        owner_id:     params[:owner_id]
+      )
+    end
 
     deal = Steps::Deal.create!(
       message:      params[:message],
