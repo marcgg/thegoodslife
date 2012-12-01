@@ -8,6 +8,9 @@ Thegoodslife::Application.routes.draw do
   get "ben/view3"
 
   resources :steps
+
+  get "give", to: "steps#new"
+
   resources :goods
   resources :search
   resources :users
