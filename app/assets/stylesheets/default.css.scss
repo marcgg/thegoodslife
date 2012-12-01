@@ -26,6 +26,16 @@ input{
 .wrapper{
 	width:860px;
 	margin:0 auto;
+	@include clearfix();
+	.col2{
+		float:left;
+		width:500px;
+		margin-right:20px;
+	}
+	.col1{
+		float:left;
+		width:340px;
+	}
 }
 
 footer{
