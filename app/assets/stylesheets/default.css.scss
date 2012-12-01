@@ -1,16 +1,18 @@
 @import "compass/reset";
 @import "mixins";
 
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700,800);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800);
+@import url(http://fonts.googleapis.com/css?family=Lato:400,900);
 
 body {
 	font-family:'Open Sans',Helvetica,Arial,sans-serif;
 	font-weight:400;
 	font-size:12px;
 	color:$gray_text;
+	-webkit-font-smoothing: antialiased;
 }
 
-input:focus{
+*:focus{
    outline:0;
 }
 
@@ -21,4 +23,52 @@ input:focus{
 .wrapper{
 	width:860px;
 	margin:0 auto;
+}
+
+footer{
+	margin:50px 0;
+}
+
+h1{
+	font-weight:800;
+	color:$black_text;
+	font-size:25px;
+	margin-bottom:5px;
+}
+.basline{
+	font-size:15px;
+	margin-bottom:5px;
+}
+
+.form{
+	margin:20px 0 20px 20px;
+	input[type=text], input[type=email], input[type=number], textarea{
+		display:block;
+		width:386px;
+		background:#fff;
+		border:1px solid $gray_border;
+		@include border-radius(3px);
+		line-height:20px;
+		font-size:14px;
+		padding:0 7px;
+		margin-bottom:10px;
+		color:$black_text;
+		&::-webkit-input-placeholder {
+			color:$placeholder_text;
+		}
+		&:focus{
+			border-color:#5289c9;
+			@include box-shadow(0 0 10px rgba(82,137,201,0.5));
+			&::-webkit-input-placeholder {
+				color:#fff;
+			}
+		}
+	}
+	input[type=text], input[type=email], input[type=number]{
+		height:35px;
+	}
+	textarea{
+		height:100px;
+		padding:7px;
+	}
 }
