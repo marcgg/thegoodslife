@@ -5,10 +5,11 @@
     = image_tag step.winner.photo_url, class: 'profile-pic'
   .date= step.affected_date.strftime("%Y")
 
-  %h4.title Deal
   - if step.open?
+    %h4.title Giving
     .by #{user_link(step.owner)}
     %p
       #{step.owner.name} is giving this object!
   - else
+    %h4.title Given
     %p #{user_link(step.winner)} currently owns this.
