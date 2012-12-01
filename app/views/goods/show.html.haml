@@ -2,6 +2,9 @@
 %p= @good.description
 %p Owner is #{@good.owner.name}
 
+- if @good.available?
+  = link_to "Want", want_good_path(@good)
+
 - @good.photo_urls.each do |url|
   = image_tag url
 

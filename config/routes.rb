@@ -11,9 +11,17 @@ Thegoodslife::Application.routes.draw do
 
   get "give", to: "steps#new"
 
-  resources :goods
+  resources :goods do
+    member do
+      get "want"
+    end
+  end
   resources :search
-  resources :users
+  resources :users do
+    member do
+      get "dashboard"
+    end
+  end
 
   get "bihi", to: "bihi#index"
 
