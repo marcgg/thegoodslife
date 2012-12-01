@@ -3,6 +3,7 @@
 .single-good{
 	@include clearfix();
 	.good-header{
+		z-index:100;
 		position:absolute;
 		top:105px;
 		right:0;
@@ -10,15 +11,7 @@
 		padding-top:20px;
 		background:#fff;
 		@include clearfix();
-		&:before{
-			content:'';
-			position:absolute;
-			bottom:-15px;
-			right:0;
-			left:0;
-			height:15px;
-			background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 1.00)),to(rgba(255, 255, 255, 0.00)));
-		}
+		@include transition(box-shadow 0.2s linear);
 		.photos{
 			width:500px;
 			.big-photo{
@@ -27,7 +20,7 @@
 				margin-bottom:10px;
 				@include coverBg();
 				@include border-radius(2px);
-				@include transition(height 0.1s linear);
+				@include transition(height 0.2s linear);
 			}
 			.photos-list{
 				@include clearfix();
@@ -35,6 +28,7 @@
 				height:45px;
 				overflow:hidden;
 				overflow-x:auto;
+				@include transition(height 0.2s linear);
 				.photo{
 					float:left;
 					width:45px;
@@ -51,12 +45,12 @@
 			height:400px;
 			background:#3bb2d0;
 			@include border-radius(2px);
-			@include transition(height 0.1s linear);
+			@include transition(height 0.2s linear);
 		}
 	}
 	.good-content{
 		margin-top: 525px;
-		@include transition(margin-top 0.1s linear);
+		@include transition(margin-top 0.2s linear);
 		h1{
 			font-size:30px;
 			font-weight:800;
@@ -64,29 +58,77 @@
 		p{
 			line-height:16px;
 		}
+		h2{
+			color:$black_text;
+			font-size:14px;
+			font-weight:700;
+			padding-bottom:10px;
+			margin-bottom:10px;
+			text-transform:uppercase;
+			border-bottom:1px solid $gray_border;
+		}
 		h3{
 			margin:20px 0 3px 0;
 			text-transform:uppercase;
 			font-size:14px;
 			font-weight:700;
 		}
+		.owner-tab{
+			position:relative;
+			margin-bottom:20px;
+			padding-left:50px;
+			height:40px;
+			.profil-pic{
+				position:absolute;
+				top:0;
+				left:0;
+				width:40px;
+				height:40px;
+				@include border-radius(50%);
+			}
+			.name{
+				display:block;
+				font-size:14px;
+				font-weight:700;
+				text-decoration:none;
+				color:$black_text;
+				padding-top:5px;
+			  a{
+				display:block;
+				font-size:14px;
+				font-weight:700;
+				text-decoration:none;
+				color:$black_text;
+				padding-top:5px;
+				}
+			}
+			.location{
+				margin-top:3px;
+				color:$blue_location;
+				text-transform:uppercase;
+			}
+		}
 	}
 	&.blocked{
 		.good-header{
 			position:fixed;
 			top:-10px;
+			@include box-shadow(0 1px 3px rgba(0,0,0,0.2));
 			.photos{
 				.big-photo{
-					height:300px;
+					height:250px;
+				}
+				.photos-list{
+					height:0;
 				}
 			}
 			.map{
-				height:300px;
+				height:195px;
 			}
 		}
 		.good-content{
-			margin-top: 425px;
-			margin-bottom:100px;
+			margin-top: 350px;
+			margin-bottom:200px;
 		}
 	}
 }

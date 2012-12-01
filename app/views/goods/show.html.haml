@@ -12,11 +12,13 @@
           #jsMap
         - if @good.available? && @good.owner_id != current_user.id
           - if @good.wanters.include?(current_user)
-            Already requested
+            .big-btn.disable Already requested
           - else
-            = link_to "Request", want_good_path(@good)
-          - if !@good.available && @good.owner_id == current_user.id
-            = link_to "Give", new_step_path(good_id: @good.id)
+            = link_to "Request", want_good_path(@good), class:'big-btn'
+        - if !@good.available && @good.owner_id == current_user.id
+          = link_to "Give", new_step_path(good_id: @good.id), class:'big-btn'
+        - else
+          .big-btn.disable Not available for the moment
   .good-content.wrapper
     .col2
       %h1= @good.title
@@ -28,7 +30,8 @@
       %h2 Owner
       .owner-tab
         = image_tag @good.owner.photo_url, class: 'profil-pic'
-        #{user_link(@good.owner)}
+        .name= user_link(@good.owner)
+        .location= @good.owner.location
         
       %h2 Milestones
       - if @good.owner == current_user

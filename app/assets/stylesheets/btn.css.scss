@@ -20,6 +20,26 @@
 	background:$saumon;
 }
 
+.big-btn{
+	display:block;
+	margin-top:10px;
+	height:45px;
+	line-height:45px;
+	padding:0;
+	border:0;
+	font-size:14px;
+	font-weight:700;
+  text-decoration:none;
+	text-transform:uppercase;
+  color:#fff;
+	text-align:center;
+  @include border-radius(3px);
+	background:#ff3332;
+	&.disable{
+		background:#aaa;
+	}
+}
+
 input{
 	&.saumon-btn{
 		height:35px;

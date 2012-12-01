@@ -1,6 +1,7 @@
 @import "mixins";
 
 body > header{
+	z-index:200;
 	height:35px;
 	padding:20px 0;
 	margin-bottom:50px;
@@ -63,6 +64,7 @@ body > header{
 						}
 					}
 					ul{
+						z-index:300;
 						display:none;
 						position:absolute;
 						top:35px;
