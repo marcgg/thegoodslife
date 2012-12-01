@@ -10,5 +10,10 @@ class StepsController < ApplicationController
   end
 
   def create
+    Good.create!(
+      description: params[:good_description],
+      title: params[:title],
+      category: params[:category]
+    )
   end
 end
