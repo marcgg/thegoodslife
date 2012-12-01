@@ -12,7 +12,9 @@
         %li= link_to 'Give', give_path
         - if current_user
           %li.dropdown
-            = link_to 'My Account', current_user
+            %a{ href: user_path(current_user) }
+              = image_tag(current_user.photo_url, class: "nav-picto")
+              My Account
             %ul
               %li= link_to 'My requests', dashboard_user_path(current_user)
               %li= link_to 'Edit account', account_path
