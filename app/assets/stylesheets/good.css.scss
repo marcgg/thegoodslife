@@ -20,9 +20,7 @@
 			background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 1.00)),to(rgba(255, 255, 255, 0.00)));
 		}
 		.photos{
-			float:left;
 			width:500px;
-			margin-right:20px;
 			.big-photo{
 				width:500px;
 				height:400px;
@@ -49,7 +47,6 @@
 			}
 		}
 		.map{
-			float:left;
 			width:340px;
 			height:400px;
 			background:#3bb2d0;
@@ -60,6 +57,19 @@
 	.good-content{
 		margin-top: 525px;
 		@include transition(margin-top 0.1s linear);
+		h1{
+			font-size:30px;
+			font-weight:800;
+		}
+		p{
+			line-height:16px;
+		}
+		h3{
+			margin:20px 0 3px 0;
+			text-transform:uppercase;
+			font-size:14px;
+			font-weight:700;
+		}
 	}
 	&.blocked{
 		.good-header{
