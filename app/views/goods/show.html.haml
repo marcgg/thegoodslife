@@ -18,12 +18,12 @@
             .big-btn.disable Give
           - else
             - if @good.wanters.include?(current_user)
-              .big-btn.disable Already requested
+              .big-btn.disable requested
             - else
               = link_to "Request", want_good_path(@good), class:'big-btn'
         - else 
           - if @good.owner_id == current_user.id
-            = link_to "Give", new_step_path(good_id: @good.id), class:'big-btn'
+            = link_to "Give Back", new_step_path(good_id: @good.id), class:'big-btn'
           - else
             .big-btn.disable Not available for the moment
   .good-content.wrapper
