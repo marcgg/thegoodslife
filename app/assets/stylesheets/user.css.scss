@@ -2,7 +2,7 @@
 
 .user-header{
 	position:relative;
-	padding:0 115px;
+	padding:0 215px 0 115px;
 	min-height:100px;
 	margin-bottom:80px;
 	.profile-pic img{
@@ -37,5 +37,52 @@
 		font-weight:800;
 		background:#98deee;
 		@include border-radius(2px);
+	}
+}
+.user-lists{
+	.list{
+		float:left;
+		width:250px;
+		margin-right:40px;
+		&:last-child{
+			margin-right:0;
+		}
+		.count{
+			text-align:center;
+			margin-bottom:45px;
+			.data-value{
+				@include inline-block();
+				color:$black_text;
+				font-size:42px;
+				font-weight:700;
+				text-align:right;
+			}
+			.data-label{
+				@include inline-block();
+				text-align:left;
+				font-size:14px;
+				line-height:16px;
+				font-weight:600;
+				text-transform:uppercase;
+			}
+		}
+		ol{
+			width:260px;
+			margin-right:-10px;
+			li{
+				float:left;
+				width:120px;
+				height:120px;
+				overflow:hidden;
+				margin:0 10px 10px 0;
+				.photo{
+					display:block;
+					width:120px;
+					height:120px;
+					@include border-radius(2px);
+					@include coverBg();
+				}
+			}
+		}
 	}
 }
