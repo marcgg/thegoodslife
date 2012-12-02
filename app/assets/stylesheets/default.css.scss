@@ -146,3 +146,15 @@ h1{
 		}
 	}
 }
+#jsGivePage{
+	position:relative;
+	.map{
+		position:absolute;
+		top:82px;
+		right:0;
+		#jsMap{
+			width:410px;
+			height:313px;
+		}
+	}
+}
