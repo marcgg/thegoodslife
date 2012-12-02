@@ -11,7 +11,12 @@ class Good < ActiveRecord::Base
   end
 
   def photo_url
-    photo_urls.first
+    last_deal = Steps::Deal.where(good_id: self.id).order("created_at DESC").first.photo_url
+    if last_deal.blank?
+      return photo_urls.last
+    else
+      return last_deal
+    end
   end
 
   def all_locations_count
