@@ -16,4 +16,5 @@
 @mixin coverBg(){
 	background-position:center center;
 	-webkit-background-size:cover;
+	background-repeat:no-repeat;
 }

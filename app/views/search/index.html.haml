@@ -1,6 +1,12 @@
-%section.wrapper.search-page
-  - if params[:search].blank? && params[:browse].blank?
-    HOME!
+- if params[:search].blank? && params[:browse].blank?
+  .splash-home#jsSplashHome
+    %h1 Give your goods a second life. Or a third.
+    %p.baseline Offer an object, request another, contribute to both stories.
+    .nav
+      = link_to 'Give', give_path
+      = link_to 'Search', '#', id: 'jsFocusSearch'
+
+%section.wrapper.search-page      
   - if params[:search].present?
     %h1
       Results for
