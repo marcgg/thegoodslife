@@ -1,3 +1,14 @@
+- content_for :head do
+  %meta(property="og:type"          content="#{Thegoodslife::Application.config.facebook.namespace}:object")
+  %meta(property="og:title"         content="#{@good.title}")
+  %meta(property="og:url"           content="http://#{request.host + request.path}")
+  %meta(property="og:image"         content="#{@good.photo_url}")
+  %meta(property="og:site_name"     content='The Goods Life')
+  %meta(property="og:description"   content="#{@good.description}")
+- content_for :after_fbinit do
+  - if flash[:new_good] = true     
+    FB.api( "/me/#{Thegoodslife::Application.config.facebook.namespace}:give", "post", {object:"http://#{request.host + request.path}"}, function(){});
+
 %article.single-good#jsGoodPage
   .good-header
     .wrapper
@@ -53,3 +64,4 @@
                 = submit_tag "Add", class: "saumon-btn"
       - @good.steps.each do |step|
         = render "/steps/items/#{step.type.demodulize.downcase}", step: step
+    
