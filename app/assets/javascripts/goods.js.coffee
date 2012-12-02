@@ -16,6 +16,8 @@ initGoodPage = () ->
 	map.addLayer(markerLayer).setExtent markerLayer.extent()
 	savedCenter = map.center()
 	savedZoom = map.zoom() - 2
+	if savedZoom > 10
+		savedZoom = 10
 	map.zoom(savedZoom, true)
 
 	$("body").delegate ".jsMilestone", "dblclick", (e) ->
