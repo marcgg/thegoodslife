@@ -1,0 +1,8 @@
+- step = Step.find(params[:id])
+= form_tag "/admin/change/?id=#{params[:id]}" do 
+  - Step.column_names.each do |attr|
+    = attr
+    = text_field_tag attr, step.send(attr)
+    %br
+    %br
+    = submit_tag
