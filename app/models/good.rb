@@ -38,7 +38,6 @@ class Good < ActiveRecord::Base
     locations.last
   end
 
-
   def geo_points
     locations.map {|step|
       {
