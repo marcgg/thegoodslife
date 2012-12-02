@@ -1,4 +1,5 @@
-- if params[:search].blank? && params[:browse].blank?
+
+- if params[:search].blank? && params[:browse].blank? && params[:commit].blank?
   .splash-home#jsSplashHome
     %h1 Give your goods a second life. Or a third.
     %p.baseline Offer an object, request another, contribute to both stories.
@@ -6,7 +7,7 @@
       = link_to 'Give', give_path
       = link_to 'Search', '#', id: 'jsFocusSearch'
 
-%section.wrapper.search-page      
+%section.wrapper.search-page
   - if params[:search].present?
     %h1
       Results for
@@ -17,7 +18,8 @@
         .graphic
           .photo{style:"background-image:url(#{good.photo_url});"}
           .map
-            = image_tag "http://api.tiles.mapbox.com/v3/benjaminbouwyn.map-r3r04347/url-bit.ly%2FTzrQOl(#{good.steps.last.long},#{good.steps.last.lat})/#{good.steps.last.long},#{good.steps.last.lat},13/200x75.png"
+            - long_lat = "#{good.current_location.long},#{good.current_location.lat}"
+            = image_tag "http://api.tiles.mapbox.com/v3/benjaminbouwyn.map-r3r04347/url-bit.ly%2FTzrQOl(#{long_lat})/#{long_lat},13/200x75.png"
         %header
           %h2= link_to good.title, good_path(good)
         %section.stats

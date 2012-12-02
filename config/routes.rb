@@ -1,5 +1,5 @@
 Thegoodslife::Application.routes.draw do
-  get "search/index"
+  get "search", to: "search#index"
 
   resources :steps
 

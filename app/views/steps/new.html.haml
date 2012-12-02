@@ -12,6 +12,9 @@
         = select_tag :category, options_for_select(@categories.map{|c| [c,c]})
       %label{ for:'location' } Location
       = text_field_tag :location, nil, placeholder: 'Location'
+      .none
+        = text_field_tag :lat
+        = text_field_tag :long
       %label{ for:'good_description' } Description
       = text_area_tag :good_description, (@good ? @good.description : nil), placeholder: 'Description'
       %label{ for:'message' } Modalities of the deal

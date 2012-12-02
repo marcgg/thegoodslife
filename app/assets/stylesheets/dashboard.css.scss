@@ -1,4 +1,7 @@
 .dashboard{
+  .item-image{
+    border-radius: 0px !important;
+  }
   .deal-photo{
     margin-top: 40px;
     font-size: 2em;
@@ -27,7 +30,7 @@
     padding: 0px 20px;
     border-left: 1px solid #ccc;
     .wanter{
-      height: 50px;
+      height: 65px;
       .link{
         float: right;
         padding: 10px;
