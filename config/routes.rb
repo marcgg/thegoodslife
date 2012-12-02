@@ -11,12 +11,11 @@ Thegoodslife::Application.routes.draw do
       get "give"
     end
   end
+
   resources :search
-  resources :users do
-    member do
-      get "dashboard"
-    end
-  end
+
+  resources :users
+  get 'dashboard', to: 'users#dashboard'
 
   post "login", to: "sessions#create"
   get "login", to: "sessions#fake_login"

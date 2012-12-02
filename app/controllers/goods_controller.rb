@@ -17,13 +17,13 @@ class GoodsController < ApplicationController
 
   def give
     @good = Good.find(params[:id])
-    deal = Steps::Deal.where(good_id: @good.id).order("created_at DESC").last
+    deal = @good.latest_deal
     deal.update_attribute(:winner_id, params[:to])
-    @good.update_attributes(
+    @good.update_attributes!(
       owner_id: params[:to],
       available: false
     )
-    @good.wanters.clear
+    Want.where(good_id: @good.id).delete_all
     redirect_to dashboard_user_path(current_user)
   end
 

@@ -29,16 +29,19 @@ class StepsController < ApplicationController
           owner_id:     current_user.id
         )
 
-        deal = Steps::Deal.create!(
-          message:      params[:message],
-          location:     params[:location],
-          photo_url:    params[:photo_url],
-          owner_id:     current_user.id,
-          good_id:      good.id
-        )
       else
         good = Good.find(params[:add_milestone_to_good])
       end
+    end
+
+    if params[:add_milestone_to_good].blank?
+      deal = Steps::Deal.create!(
+        message:      params[:message],
+        location:     params[:location],
+        photo_url:    params[:photo_url],
+        owner_id:     current_user.id,
+        good_id:      good.id
+      )
     end
 
 

@@ -16,7 +16,7 @@
               = image_tag(current_user.photo_url, class: "nav-picto")
               My Account
             %ul
-              %li.subnav-link= link_to 'My requests', dashboard_user_path(current_user)
+              %li.subnav-link= link_to 'My requests', dashboard_path
               %li.subnav-link= link_to 'Edit account', account_path
               %li.subnav-link= link_to "Log Out", logout_path
         - else
