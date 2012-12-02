@@ -6,7 +6,7 @@
   %meta(property="og:site_name"     content='The Goods Life')
   %meta(property="og:description"   content="#{@good.description}")
 - content_for :after_fbinit do
-  - if flash[:new_good] = true     
+  - if flash[:new_good]     
     FB.api( "/me/#{Thegoodslife::Application.config.facebook.namespace}:give", "post", {object:"http://#{request.host + request.path}"}, function(){});
 
 %article.single-good#jsGoodPage
