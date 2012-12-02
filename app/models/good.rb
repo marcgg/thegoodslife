@@ -30,8 +30,17 @@ class Good < ActiveRecord::Base
     steps.detect(&:open?)
   end
 
+  def locations
+    steps.map {|step| Location.new(step.long, step.lat) }
+  end
+
+  def current_location
+    locations.last
+  end
+
+
   def geo_points
-    steps.map {|step|
+    locations.map {|step|
       {
         geometry: {
           type: 'Point',
@@ -43,5 +52,7 @@ class Good < ActiveRecord::Base
       }
     }
   end
+
+  Location = Struct.new(:long, :lat)
 
 end
