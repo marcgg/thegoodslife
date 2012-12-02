@@ -7,7 +7,7 @@
   %meta(property="og:description"   content="#{@good.description}")
 - content_for :after_fbinit do
   - if flash[:new_deal]
-    FB.api( "/me/#{Thegoodslife::Application.config.facebook.namespace}:give", "post", {object:"http://#{request.host + request.path}"}, function(){});
+    setTimeout(function() { FB.api( "/me/#{Thegoodslife::Application.config.facebook.namespace}:give", "post", {object:"http://#{request.host + request.path}"}, function(){}); }, 50);
 
 %article.single-good#jsGoodPage
   .good-header
@@ -64,4 +64,3 @@
                 = submit_tag "Add", class: "saumon-btn"
       - @good.steps.each do |step|
         = render "/steps/items/#{step.type.demodulize.downcase}", step: step
-    
