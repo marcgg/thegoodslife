@@ -9,32 +9,40 @@
     .score
       %span= @user.score
 
-  #goods
-    #list
-      #offered-goods
-        %span.count= @user.offered_goods.count
-        Goods offered
-        %ol
-          - @user.offered_goods.each do |good|
-            %li
-              = image_tag good.photo_url, style: "width: 100px"
-              = link_to good.title, good_path(good)
+  .user-lists
+    .list.offered-goods
+      .count
+        .data-value= @user.offered_goods.count
+        .data-label
+          Goods
+          %br
+          offered
+      %ol
+        - @user.offered_goods.each do |good|
+          %li
+            .photo{style:"background-image:url(#{good.photo_url})"}
 
-      #available-goods
-        %span.count= @user.available_goods.count
-        Goods available
-        %ol
-          - @user.available_goods.each do |good|
-            %li
-              = image_tag good.photo_url, style: "width: 100px"
-              = link_to good.title, good_path(good)
+    .list.available-goods
+      .count
+        .data-value= @user.available_goods.count
+        .data-label
+          Goods
+          %br
+          available
+      %ol
+        - @user.available_goods.each do |good|
+          %li
+            .photo{style:"background-image:url(#{good.photo_url})"}
 
-      #taken-goods
-        %span.count= @user.won_goods.count
-        Goods taken
-        %ol
-          - @user.won_goods.each do |good|
-            %li
-              = image_tag good.photo_url, style: "width: 100px"
-              = link_to good.title, good_path(good)
+    .list.taken-goods
+      .count
+        .data-value= @user.won_goods.count
+        .data-label
+          Goods
+          %br
+          taken
+      %ol
+        - @user.won_goods.each do |good|
+          %li
+            .photo{style:"background-image:url(#{good.photo_url})"}
 
