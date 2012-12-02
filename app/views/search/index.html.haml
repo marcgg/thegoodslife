@@ -1,4 +1,6 @@
 %section.wrapper.search-page
+  - if params[:search].blank? && params[:browse].blank?
+    HOME!
   - if params[:search].present?
     %h1
       Results for
