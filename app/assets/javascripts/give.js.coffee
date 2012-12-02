@@ -3,4 +3,5 @@ $ ->
 
 initGive = () ->
 	$("body").delegate "#location", "blur", (e) ->
-		location = $(this).value()
+		location = $(this).val()
+		console.log location

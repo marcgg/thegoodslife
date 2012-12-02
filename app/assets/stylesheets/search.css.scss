@@ -28,7 +28,7 @@
 				overflow:hidden;
 				background:#888;
 				margin-bottom:10px;
-				@include border-radius(2px);
+				@include border-radius(5px);
 				.photo{
 					position:absolute;
 					top:0;
@@ -36,7 +36,7 @@
 					width:200px;
 					height:230px;
 					@include coverBg();
-					@include border-radius(2px);
+					@include border-radius(5px);
 				}
 				.map{
 					position:absolute;
@@ -45,7 +45,7 @@
 					height:75px;
 					background:#3bb2d0;
 					opacity:0;
-					@include border-bottom-radius(2px);
+					@include border-bottom-radius(5px);
 					@include transition-property(top, opacity);
 					@include transition-duration(0.15s);
 					@include transition-timing-function(ease-out);
@@ -62,7 +62,7 @@
 			header{
 				h2{
 					color:$black_text;
-					font-size:15px;
+					font-size:14px;
 					font-weight:700;
 					margin-bottom:3px;
 					a{
@@ -77,9 +77,6 @@
 				font-weight:400;
 				.stat{
 					display:inline;
-					span{
-						font-weight:700;
-					}
 					&:after{
 						content:' •';
 					}

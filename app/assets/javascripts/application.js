@@ -4,3 +4,4 @@
 //= include facebook
 //= include search
 //= include goods
+//= include give
