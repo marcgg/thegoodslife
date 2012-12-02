@@ -11,11 +11,4 @@ class Steps::Deal < Step
     !winner_id?
   end
 
-  def main_actor
-    if open?
-      owner
-    else
-      winner
-    end
-  end
 end
