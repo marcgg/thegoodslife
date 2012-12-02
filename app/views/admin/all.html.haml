@@ -1,0 +1,12 @@
+- [User, Good, Want, Step].each do |klass|
+  %h1= klass
+  %table
+    %tr
+      - klass.column_names.each do |attr|
+        %td= attr
+    - klass.all.each do |user|
+      %tr
+        - klass.column_names.each do |attr|
+          %td= user.send attr
+
+

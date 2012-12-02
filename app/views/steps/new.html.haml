@@ -27,6 +27,6 @@
     .baseline Tell us something about your story with this object
 
     .form
-      = render 'new_milestone'
-      = submit_tag "Give", class: "saumon-btn"
-
+      = form_for :milestone, url: steps_path do |form|
+        = render "/steps/edit/milestone", form: form
+        = submit_tag "Give", class: "saumon-btn"
