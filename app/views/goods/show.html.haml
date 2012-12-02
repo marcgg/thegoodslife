@@ -11,8 +11,8 @@
         .map
           #jsMap
           %script
-            var myPoints = #{@my_points};
-          	
+            var myPoints = #{@good.geo_points.to_json.html_safe};
+
         - if @good.available?
           - if @good.owner_id == current_user.id
             .big-btn.disable Give
