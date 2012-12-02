@@ -1,5 +1,5 @@
 %section.wrapper.search-page
-  - if params[:search].blank? && params[:browse].blank?
+  - if params[:search].blank? && params[:browse].blank? && params[:commit].blank?
     HOME!
   - if params[:search].present?
     %h1
