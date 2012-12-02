@@ -139,11 +139,9 @@ h1{
 			color:#fff;
 			text-decoration:none;
 			background:rgba(0,0,0,0.7);
+			@include border-radius(5px);
 			&:first-child{
-				@include border-left-radius(30px);
-			}
-			&:last-child{
-				@include border-right-radius(30px);
+				background-color: #E45538;
 			}
 		}
 	}
