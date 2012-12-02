@@ -1,4 +1,7 @@
-# TheGoodsLife
+#                                         TheGoodsLife
+                                                                        _Give your goods a second life. Or a third._
+
+* * *
 
 This is a project done for Paris’ [AngelHack](http://angelhack.com) 2012.
 
@@ -17,7 +20,7 @@ Heroku.
 
 ### Tagline
 
-_Give your goods a second life. Or a third._
+Give your goods a second life. Or a third.
 
 ### We Built…
 
