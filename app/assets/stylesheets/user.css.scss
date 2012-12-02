@@ -1,2 +1,41 @@
 @import "mixins";
 
+.user-header{
+	position:relative;
+	padding:0 115px;
+	min-height:100px;
+	margin-bottom:80px;
+	.profile-pic img{
+		position:absolute;
+		top:0;
+		left:0;
+		width:100px;
+		height:100px;
+		@include border-radius(50%);
+	}
+	h1{
+		font-size:30px;
+	}
+	.bio{
+		line-height:16px;
+		margin-bottom:5px;
+	}
+	.location{
+		color:$blue_location;
+		text-transform:uppercase;
+	}
+	.score{
+		position:absolute;
+		top:0;
+		right:0;
+		height:100px;
+		width:100px;
+		line-height:100px;
+		color:#fff;
+		text-align:center;
+		font-size:45px;
+		font-weight:800;
+		background:#98deee;
+		@include border-radius(2px);
+	}
+}

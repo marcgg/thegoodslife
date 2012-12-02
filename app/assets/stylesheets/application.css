@@ -4,6 +4,7 @@
 	*= require 'menu'
 	*= require 'search'
 	*= require 'good'
+	*= require 'user'
 	*= require 'dashboard'
 	*= require 'footer'
  */
