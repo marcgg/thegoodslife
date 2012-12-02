@@ -5,11 +5,11 @@ class Step < ActiveRecord::Base
   belongs_to :good, inverse_of: :steps
 
   def long
-    super || "2.#{self.id * 2}"
+    super || "#{rand 10}.#{rand(100000)}"
   end
 
   def lat
-    super || "48.#{self.id * 4}"
+    super || "#{ 25 +rand(10)}.#{rand(100000)}"
   end
 
   def open?

@@ -8,6 +8,12 @@ class StepsController < ApplicationController
     @step = Step.find params[:id]
   end
 
+  def update
+    @step = Step.find params[:id]
+    @step.update_attributes params[:step]
+    redirect_to @step.good
+  end
+
   def index
     @deals = Steps::Deal.all
   end
