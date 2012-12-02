@@ -38,6 +38,8 @@ class StepsController < ApplicationController
       deal = Steps::Deal.create!(
         message:      params[:message],
         location:     params[:location],
+        lat:          params[:lat],
+        long:         params[:long],
         photo_url:    params[:photo_url],
         owner_id:     current_user.id,
         good_id:      good.id
@@ -52,6 +54,8 @@ class StepsController < ApplicationController
       milestone = Steps::Milestone.create!(
         message:       milestone_params[:message],
         location:      milestone_params[:location],
+        lat:           milestone_params[:lat],
+        long:          milestone_params[:long],
         photo_url:     milestone_params[:photo_url],
         owner_id:      current_user.id,
         good_id:       good.id,

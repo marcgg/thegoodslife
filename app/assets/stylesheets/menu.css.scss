@@ -113,7 +113,7 @@ body > header{
 						&:focus{
 							width:200px;
 							padding:0 8px;
-							background:#fff !important;
+							background:#fff url(image-path('search-icon.png')) 190px center no-repeat !important;
 							color:$saumon !important;
 							&::-webkit-input-placeholder {
 								color:#fff;

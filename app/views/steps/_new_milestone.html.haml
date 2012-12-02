@@ -1,6 +1,9 @@
 = fields_for :milestone, Step.new do |f|
   %label{ for:'milestone_location' } Location
   = f.text_field :location, placeholder: 'Location'
+  .none
+    = f.text_field :lat
+    = f.text_field :long
   %label Date
   .selects
     = f.date_select :affected_date, start_year: 1960, end_year: 2012

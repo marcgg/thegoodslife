@@ -100,3 +100,51 @@ h1{
 		}
 	}
 }
+
+.splash-home{
+	position:relative;
+	height:420px;
+	margin-top:-50px;
+	background: url(image-path('hero.jpg')) center center no-repeat;
+	@include coverBg();
+	text-align:center;
+	&:before{
+		content:'';
+		position:absolute;
+		top:0;
+		left:0;
+		right:0;
+		height:4px;
+		background:rgba(0,0,0,0.2);
+	}
+	h1{
+		color:#fff;
+		text-shadow:0 0 4px rgba(0,0,0,0.3);
+		font-size:35px;
+		padding:120px 0 20px 0;
+	}
+	.baseline{
+		text-shadow:0 0 4px rgba(0,0,0,0.3);
+		font-size:20px;
+		color:#ccc;
+	}
+	.nav{
+		margin-top:50px;
+		a{
+			display:inline-block;
+			width:130px;
+			height:60px;
+			line-height:60px;
+			font-size:20px;
+			color:#fff;
+			text-decoration:none;
+			background:rgba(0,0,0,0.7);
+			&:first-child{
+				@include border-left-radius(30px);
+			}
+			&:last-child{
+				@include border-right-radius(30px);
+			}
+		}
+	}
+}
