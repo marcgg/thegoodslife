@@ -19,3 +19,4 @@ $('.jsFacebookLogin').click (event) ->
       FB.login (response) =>
         if response.status == 'connected'
           login(url)
+      , scope: 'publish_actions'
