@@ -30,4 +30,18 @@ class Good < ActiveRecord::Base
     steps.detect(&:open?)
   end
 
+  def geo_points
+    steps.map {|step|
+      {
+        geometry: {
+          type: 'Point',
+          coordinates: [step.long, step.lat]
+        },
+        properties: {
+          image: '//d7q85mn3faw4b.cloudfront.net/clients/popmarket/offre-decouverte/map-marker.png'
+        }
+      }
+    }
+  end
+
 end
