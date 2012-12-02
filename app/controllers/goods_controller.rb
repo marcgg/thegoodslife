@@ -24,7 +24,7 @@ class GoodsController < ApplicationController
       available: false
     )
     Want.where(good_id: @good.id).delete_all
-    redirect_to dashboard_user_path(current_user)
+    redirect_to dashboard_path
   end
 
   def want
