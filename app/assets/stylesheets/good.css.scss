@@ -119,12 +119,25 @@
 			}
 		}
 		.step{
-			margin-bottom:10px;
 			position:relative;
 			margin-bottom:20px;
 			padding-left:40px;
 			min-height:40px;
 			cursor:default;
+			&.hovered{
+				background:#efefef;
+				margin:-7px -7px 13px -7px;
+				padding:7px 7px 7px 47px;
+				@include border-radius(5px);
+				.profil-pic{
+					top:7px;
+					left:7px;
+				}
+				.date{
+					top:7px;
+					right:7px;
+				}
+			}
 			.profil-pic{
 				position:absolute;
 				top:0;
@@ -178,7 +191,7 @@
 			}
 		}
 		.good-content{
-			margin-top: 350px;
+			margin-top: 450px;
 			margin-bottom:200px;
 		}
 	}
