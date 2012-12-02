@@ -17,7 +17,10 @@ initGoodPage = () ->
 	savedCenter = map.center()
 	savedZoom = map.zoom() - 2
 	map.zoom(savedZoom, true)
-	
+
+	$("body").delegate ".jsMilestone", "dblclick", (e) ->
+		url = $(this).attr('data-href')
+		window.location = url if url
 
 	$("body").delegate ".jsPhotoList", "click", (e) ->
 		e.preventDefault
@@ -37,7 +40,7 @@ initGoodPage = () ->
 					$('#jsMap').removeClass('jsMoved')
 					map.addLayer(markerLayer).setExtent markerLayer.extent()
 					map.centerzoom(savedCenter, savedZoom, true)
-	
+
 	$("body").delegate ".jsMilestone", "mouseenter", (e) ->
 		$this = $(this)
 		$this.addClass('hovered')

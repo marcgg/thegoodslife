@@ -50,4 +50,4 @@
                 = render 'steps/new_milestone'
                 = submit_tag "Add", class: "saumon-btn"
       - @good.steps.each do |step|
-        = render partial: "/steps/items/#{step.type.demodulize.downcase}", locals: { step: step }
+        = render "/steps/items/#{step.type.demodulize.downcase}", step: step
