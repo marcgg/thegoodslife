@@ -15,9 +15,12 @@ initGoodPage = () ->
 	)
 	map.addLayer(markerLayer).setExtent markerLayer.extent()
 	savedCenter = map.center()
-	savedZoom = map.zoom() - 5
+	savedZoom = map.zoom() - 2
 	map.zoom(savedZoom, true)
-	
+
+	$("body").delegate ".jsMilestone", "dblclick", (e) ->
+		url = $(this).attr('data-href')
+		window.location = url if url
 
 	$("body").delegate ".jsPhotoList", "click", (e) ->
 		e.preventDefault
@@ -37,10 +40,10 @@ initGoodPage = () ->
 					$('#jsMap').removeClass('jsMoved')
 					map.addLayer(markerLayer).setExtent markerLayer.extent()
 					map.centerzoom(savedCenter, savedZoom, true)
-	
-	$("body").delegate ".jsMilestone", "mouseover", (e) ->
-		e.preventDefault
+
+	$("body").delegate ".jsMilestone", "mouseenter", (e) ->
 		$this = $(this)
+		$this.addClass('hovered')
 		imgUrl = $this.attr('data-img')
 		lat = $this.attr('data-lat')
 		lon = $this.attr('data-long')
@@ -51,4 +54,9 @@ initGoodPage = () ->
 			map.ease.location({
 				lat: lat,
 				lon: lon
-			}).zoom(12).optimal();
+			}).zoom(9).optimal();
+			
+	$("body").delegate ".jsMilestone", "mouseleave", (e) ->
+		e.preventDefault
+		$this = $(this)
+		$this.removeClass('hovered')
