@@ -25,7 +25,7 @@
             var myPoints = #{@good.geo_points.to_json.html_safe};
 
         - if @good.available?
-          - if @good.owner_id == current_user.id
+          - if @good.owner_id == current_user.try(:id)
             .big-btn.disable Give
           - else
             - if @good.wanters.include?(current_user)
@@ -33,7 +33,7 @@
             - else
               = link_to "Request", want_good_path(@good), class:'big-btn'
         - else 
-          - if @good.owner_id == current_user.id
+          - if @good.owner_id == current_user.try(:id)
             = link_to "Give Back", new_step_path(good_id: @good.id), class:'big-btn'
           - else
             .big-btn.disable Not available at the moment
