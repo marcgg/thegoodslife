@@ -20,7 +20,7 @@
       %ol
         - @user.offered_goods.each do |good|
           %li
-            .photo{style:"background-image:url(#{good.photo_url})"}
+            = link_to '', good_path(good), class: 'photo', style:"background-image:url(#{good.photo_url})"
 
     .list.available-goods
       .count
@@ -32,7 +32,7 @@
       %ol
         - @user.available_goods.each do |good|
           %li
-            .photo{style:"background-image:url(#{good.photo_url})"}
+            = link_to '', good_path(good), class: 'photo', style:"background-image:url(#{good.photo_url})"
 
     .list.taken-goods
       .count
@@ -44,5 +44,5 @@
       %ol
         - @user.won_goods.each do |good|
           %li
-            .photo{style:"background-image:url(#{good.photo_url})"}
+            = link_to '', good_path(good), class: 'photo', style:"background-image:url(#{good.photo_url})"
 
