@@ -1,5 +1,6 @@
 $ ->
-	initGoodPage()
+  if $("#jsMap").length > 0
+  	initGoodPage()
 
 initGoodPage = () ->
 
