@@ -9,14 +9,21 @@ login = (url) ->
     .done ->
       window.location.reload()
 
+fb_login = (url) ->
+  FB.login (response) =>
+    if response.status == 'connected'
+      login(url)
+  , scope: 'publish_actions'
+
 $('.jsFacebookLogin').click (event) ->
   event.preventDefault()
   url = $(this).attr('href')
   FB.getLoginStatus (response) =>
     if response.status == 'connected'
-      login(url)
-    else
-      FB.login (response) =>
-        if response.status == 'connected'
+      FB.api '/me/permissions', (permissions) ->
+        if permissions.data[0].publish_actions
           login(url)
-      , scope: 'publish_actions'
+        else
+          fb_login(url)
+    else
+      fb_login(url)
