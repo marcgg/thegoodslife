@@ -32,3 +32,13 @@
           = link_to good.title, good_path(good)
           offered by
           = link_to good.owner.name, user_path(good.owner)
+
+    - current_user.won_goods.each do |good|
+      .wanter
+        = link_to "Got", "#", class: "give link"
+        = image_tag good.photo_url
+        .description
+          = link_to good.title, good_path(good)
+          offered by
+          = link_to good.owner.name, user_path(good.owner)
+
