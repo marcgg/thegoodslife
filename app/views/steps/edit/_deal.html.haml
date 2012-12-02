@@ -1,0 +1,9 @@
+%label{ for:'location' } Location
+= form.text_field :location, placeholder: 'Location'
+.none
+  = form.text_field :lat
+  = form.text_field :long
+%label{ for:'message' } Modalities of the deal
+= form.text_area :message, placeholder: 'Modalities'
+%label{ for:'photo_url' } Photo
+= form.text_field :photo_url, placeholder: 'Photo'

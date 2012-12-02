@@ -1,2 +1,5 @@
-.form
-  = render "/steps/edit/#{@step.type.demodulize.downcase}", step: @step
+.wrapper
+  = form_for :step, url: step_path(@step), method: :put do |form|
+    .form
+      = render "/steps/edit/#{@step.type.demodulize.downcase}", step: @step, form: form
+    = submit_tag "Save", class: 'saumon-btn'
