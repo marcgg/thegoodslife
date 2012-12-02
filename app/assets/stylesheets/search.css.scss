@@ -37,9 +37,6 @@
 					height:230px;
 					@include coverBg();
 					@include border-radius(2px);
-					@include transition-property(top,border-radius);
-					@include transition-duration(0.1s);
-					@include transition-timing-function(linear);
 				}
 				.map{
 					position:absolute;
@@ -47,19 +44,17 @@
 					left:0;
 					height:75px;
 					background:#3bb2d0;
+					opacity:0;
 					@include border-bottom-radius(2px);
-					@include transition-property(top);
-					@include transition-duration(0.1s);
-					@include transition-timing-function(linear);
+					@include transition-property(top, opacity);
+					@include transition-duration(0.15s);
+					@include transition-timing-function(ease-out);
 				}
 			}
 			&:hover{
 				.graphic{
-					.photo{
-						top:-75px;
-						@include border-bottom-radius(0);
-					}
 					.map{
+						opacity:1;
 						top:155px;
 					}
 				}
