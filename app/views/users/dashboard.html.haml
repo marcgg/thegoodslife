@@ -22,7 +22,7 @@
             (#{user.score})
             asked for it the #{Want.where(user_id: user.id, good_id: deal.good.id).first.created_at.strftime("%d %B %Y")}
 
-  %h1 Currently Waiting On
+  %h1 Requests I Made
   .wanters
     - current_user.wanted_goods.where(available: true).each do |good|
       .wanter
