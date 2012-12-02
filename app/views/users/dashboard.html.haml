@@ -11,8 +11,6 @@
       = link_to deal.good.title, good_path(deal.good)
 
     .wanters
-      - if deal.good.wanters.empty?
-        .no-one No one yet
       - deal.good.wanters.each do |user|
         .wanter
           = link_to "Give", give_good_path(deal.good, to: user.id), class: "give link"
@@ -27,7 +25,7 @@
     - current_user.wanted_goods.where(available: true).each do |good|
       .wanter
         = link_to "Waiting", "#", class: "waiting link"
-        = image_tag good.photo_url
+        = image_tag good.photo_url, class: "item-image"
         .description
           = link_to good.title, good_path(good)
           offered by
@@ -36,7 +34,7 @@
     - current_user.won_goods.each do |good|
       .wanter
         = link_to "Got", "#", class: "give link"
-        = image_tag good.photo_url
+        = image_tag good.photo_url, class: "item-image"
         .description
           = link_to good.title, good_path(good)
           offered by
