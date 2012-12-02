@@ -95,6 +95,7 @@ body > header{
 				}
 				fieldset{
 					input[type=text]{
+						position:relative;
 						height:35px;
 						width:60px;
 						line-height:20px;
@@ -107,13 +108,16 @@ body > header{
 						@include border-radius(3px);
 						border:0;
 						background:$saumon;
-						@include transition-property(width, background, color);
+						@include transition-property(width, background-color, color);
 						@include transition-duration(0.1s);
 						@include transition-timing-function(linear);
 						&:focus{
 							width:200px;
 							padding:0 8px;
-							background:#fff url(image-path('search-icon.png')) 190px center no-repeat !important;
+							background-color:#fff !important;
+							background-image:url(image-path('search-icon.png'));
+							background-position:190px center;
+							background-repeat:no-repeat;
 							color:$saumon !important;
 							&::-webkit-input-placeholder {
 								color:#fff;
@@ -125,7 +129,7 @@ body > header{
 						}
 						&:hover{
 							cursor:pointer;
-							background:$saumon_fume;
+							background-color:$saumon_fume;
 							&::-webkit-input-placeholder {
 								color:$saumon_lidl;
 								color:#fff;
