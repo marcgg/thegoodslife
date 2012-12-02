@@ -25,7 +25,7 @@
           - if @good.owner_id == current_user.id
             = link_to "Give Back", new_step_path(good_id: @good.id), class:'big-btn'
           - else
-            .big-btn.disable Not available for the moment
+            .big-btn.disable Not available at the moment
   .good-content.wrapper
     .col2
       %h1= @good.title
