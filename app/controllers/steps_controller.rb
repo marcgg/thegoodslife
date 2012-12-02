@@ -35,6 +35,7 @@ class StepsController < ApplicationController
           category_id:  params[:category_id],
           owner_id:     current_user.id
         )
+        flash[:new_good] = true
 
       else
         good = Good.find(params[:add_milestone_to_good])
