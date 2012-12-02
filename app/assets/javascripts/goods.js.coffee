@@ -14,7 +14,7 @@ initGoodPage = () ->
 	)
 	map.addLayer(markerLayer).setExtent markerLayer.extent()
 	savedCenter = map.center()
-	savedZoom = map.zoom() - 2
+	savedZoom = map.zoom() - 5
 	map.zoom(savedZoom, true)
 	
 

@@ -10,4 +10,5 @@ class Steps::Deal < Step
   def open?
     !winner_id?
   end
+
 end
