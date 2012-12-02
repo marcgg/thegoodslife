@@ -1,23 +1,25 @@
 # TheGoodsLife
 
-This is a project done for Paris' [AngelHack](http://angelhack.com) 2012.
+This is a project done for Paris’ [AngelHack](http://angelhack.com) 2012.
 
-Keep in mind that this was rushed over a night, so the code isn't really good…
+Keep in mind that this was rushed over a night, so the code isn’t really good…
 
-## APIs Used
+## AngelHack submissions
+
+### APIs Used
 
 MapBox, Google Maps (geocoder), Facebook OpenGraph.
 
-## Technologies Used
+### Technologies Used
 
 Ruby On Rails, PostgreSQL, CoffeeScript, HAML, SCSS, Compass. Deployed on
 Heroku.
 
-## Tagline
+### Tagline
 
-Give your goods a second life. Or a third.
+_Give your goods a second life. Or a third._
 
-## We Built…
+### We Built…
 
 We built TheGoodsLife, a platform where you can give away what you don’t need
 anymore or request something you need now.
