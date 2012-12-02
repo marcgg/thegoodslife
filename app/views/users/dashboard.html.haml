@@ -4,7 +4,10 @@
   - current_user.available_deals.each do |deal|
     - next if deal.good.wanters.empty?
     .deal-photo
-      = image_tag deal.photo_url
+      - if deal.photo_url.present?
+        = image_tag deal.photo_url
+      - else
+        = image_tag deal.good.photo_url
       = link_to deal.good.title, good_path(deal.good)
 
     .wanters
