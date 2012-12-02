@@ -34,8 +34,8 @@ ActiveRecord::Schema.define(:version => 20121202013528) do
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
     t.datetime "affected_date"
-    t.float    "lat"
-    t.float    "long"
+    t.string   "lat"
+    t.string   "long"
   end
 
   create_table "users", :force => true do |t|
