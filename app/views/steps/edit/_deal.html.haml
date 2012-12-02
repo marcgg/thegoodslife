@@ -1,6 +1,6 @@
 %label{ for:'location' } Location
 = form.text_field :location, placeholder: 'Location'
-.none
+%div{class: ('none' unless params[:controller] == 'steps' && params[:action] == 'show')}
   = form.text_field :lat
   = form.text_field :long
 %label{ for:'message' } Modalities of the deal

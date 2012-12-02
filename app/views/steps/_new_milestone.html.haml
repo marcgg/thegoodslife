@@ -1,1 +1,2 @@
-= render "/steps/edit/milestone", step: Step.new
+= form_for :step, url: steps_path do |form|
+  = render "/steps/edit/milestone", form: form
