@@ -6,6 +6,8 @@ Thegoodslife::Application.routes.draw do
 
   get "give", to: "steps#new"
 
+  get "geocoder", to: "search#geocoder"
+
   resources :goods do
     member do
       get "want"
