@@ -22,5 +22,10 @@ Thegoodslife::Application.routes.draw do
   get "logout", to: "sessions#destroy"
   get "account", to: "users#edit_current"
 
+  resources :admin do
+    collection do
+      post "change"
+    end
+  end
   root to: "search#index"
 end

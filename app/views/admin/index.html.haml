@@ -1,0 +1,8 @@
+%table
+  - Step.all.each do |step|
+    %tr
+      %td
+        - if step.photo_url.present?
+          = image_tag step.photo_url, style: "width:50px;"
+      %td= link_to step.id, admin_path(id: step.id)
+      %td= step.message
