@@ -9,4 +9,7 @@
       = f.text_area :bio, placeholder: "Tell us about yourself"
       %label Location
       = f.text_field :location, placeholder: "Where are you at?"
+      .none
+        = f.text_field :lat
+        = f.text_field :long
       = f.submit
