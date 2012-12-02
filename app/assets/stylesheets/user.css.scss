@@ -40,6 +40,21 @@
 	}
 }
 .user-lists{
+	position:relative;
+	&:before{
+		position:absolute;
+		content:'';
+		top:65px;
+		right:0;
+		left:0;
+		height:1px;
+		background-image: -webkit-gradient(radial, 50% 50%,0,50% 50%,200, from(rgba(255, 255, 255, 0.00)), to(rgba(211, 211, 211, 1.00)));
+		background-image: -webkit-radial-gradient(50% 50%, rgba(211, 211, 211, 1.00), rgba(255, 255, 255, 0.00));
+		background-image: -moz-radial-gradient(50% 50%, rgba(211, 211, 211, 1.00), rgba(255, 255, 255, 0.00));
+		background-image: -o-radial-gradient(50% 50%, rgba(211, 211, 211, 1.00), rgba(255, 255, 255, 0.00));
+		background-image: -ms-radial-gradient(50% 50%, rgba(211, 211, 211, 1.00), rgba(255, 255, 255, 0.00));
+		background-image: radial-gradient(50% 50%, rgba(211, 211, 211, 1.00), rgba(255, 255, 255, 0.00));
+	}
 	.list{
 		float:left;
 		width:250px;
@@ -67,6 +82,7 @@
 			}
 		}
 		ol{
+			@include clearfix();
 			width:260px;
 			margin-right:-10px;
 			li{
