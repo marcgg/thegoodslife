@@ -7,7 +7,8 @@
 	margin-bottom:80px;
 	.profile-pic img{
 		position:absolute;
-		top:0;
+		top:50%;
+		margin-top:-50px;
 		left:0;
 		width:100px;
 		height:100px;
@@ -26,7 +27,8 @@
 	}
 	.score{
 		position:absolute;
-		top:0;
+		top:50%;
+		margin-top:-50px;
 		right:0;
 		height:100px;
 		width:100px;
@@ -58,7 +60,7 @@
 	.list{
 		float:left;
 		width:250px;
-		margin-right:40px;
+		margin-right:55px;
 		&:last-child{
 			margin-right:0;
 		}
