@@ -1,4 +1,4 @@
-%article.step.deal.jsMilestone{'data-img'=> step.photo_url, 'data-lat'=> step.lat, 'data-long'=> step.long}
+%article.step.deal.jsMilestone{'data-img'=> step.photo_url, 'data-lat'=> step.lat, 'data-long'=> step.long, 'data-href' => step_path(step)}
   = image_tag step.owner.photo_url, class: 'profil-pic'
   .date= step.affected_date.strftime("%Y")
 
