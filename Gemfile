@@ -9,7 +9,8 @@ gem 'rails', '~>3.2.9'
 gem 'pg', group: :pg
 gem 'haml-rails'
 gem 'mysql2'
-gem 'thin'
+gem 'unicorn'
+gem 'rails_12factor'
 
 group :development do
   gem 'pry'
